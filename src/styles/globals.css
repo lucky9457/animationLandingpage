@@ -1,0 +1,1097 @@
+/* Root Color Variables for Light and Dark Mode */
+:root {
+  --background-light: #ffffff;
+  --background-dark: #0a0a0a;
+  --foreground-light: #171717;
+  --foreground-dark: #ededed;
+  --highlight-color: #f0e68c; /* Golden color */
+}
+
+/* Apply Dark Mode Colors for Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-light: #0a0a0a;
+    --foreground-light: #ededed;
+  }
+}
+
+/* Basic Reset and Box-Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #D3D3D3;
+  color: #0000;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark Mode Class for Manual Toggling */
+.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--foreground-dark);
+}
+
+/* Anchor Tag Reset */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Loading Screen Styles */
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Glow Text Animation */
+.glow-text {
+  font-size: 2rem;
+  color: var(--highlight-color);
+  text-shadow: 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color);
+  animation: glow 1.5s infinite alternate;
+}
+
+/* Glow Animation Keyframes */
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px var(--highlight-color), 0 0 20px var(--highlight-color);
+  }
+  to {
+    text-shadow: 0 0 20px var(--highlight-color), 0 0 30px var(--highlight-color);
+  }
+}
+
+/* Home Page Styles */
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s ease;
+}
+
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+ /* backdrop-filter: blur(10px); */
+  background-color: transparent;
+  z-index: 10;
+}
+
+.navbar .left,
+.navbar .middle,
+.navbar .right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .right {
+  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
+}
+
+/* Toggle Button Styling */
+.toggle-button {
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color:  #000000; /* For better visibility in light mode */
+}
+
+.dark-mode .toggle-button {
+  color: var(--highlight-color);
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 18px;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #000000; /* For visibility in light mode */
+  margin: 2px 0;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .line {
+  background-color: var(--foreground-dark); /* Visibility in dark mode */
+}
+
+/* Menu Button Text */
+.menu {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.menu span {
+  margin-right: 10px;
+  font-size: 16px;
+  color:  #000000; /* Set color for visibility */
+}
+
+.dark-mode .menu span,
+.dark-mode .line {
+  color: #ffffff; /* Adjust color for dark mode */
+}
+
+
+.menu span {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+/* Home Heading */
+.home-heading {
+  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
+  font-size: 7.5rem;
+  color: #1A1A1A; /* Light color for light mode */
+  text-align: center;
+  line-height: 0.8;
+  margin-top: 5vh;
+}
+
+.dark-mode .home-heading {
+  color: var(--highlight-color); /* Highlight color for dark mode */
+}
+
+/* Responsive Heading Size */
+@media (max-width: 768px) {
+  .home-heading {
+    font-size: 3rem;
+    padding: 0 10px;
+  }
+}
+
+/* Font Import */
+@font-face {
+  font-family: 'Dirtyline36Daysoftype2022';
+  src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Global link and text styles */
+a, p {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Menu Bar */
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  padding: 2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1;
+  background: transparent;
+}
+
+.menu-bar a, .menu-open p {
+  color: #fff;
+  cursor: pointer;
+}
+ 
+
+/* Overlay Styles */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  padding: 2em;
+  background: #cf5;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%);
+  transition: clip-path 0.75s ease-in-out;
+}
+
+/* Open state for the overlay */
+.menu-overlay.open {
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+/* Close button */
+.menu-close {
+  color: #000;
+  cursor: pointer;
+}
+
+/* Menu Links */
+.menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.menu-link-item-holder {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.menu-link-item-holder a {
+  color: #000;
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.menu-link-item-holder:hover {
+  transform: translateY(-5px);
+}
+
+/* Info Section */
+.menu-info {
+  display: flex;
+  gap: 2em;
+  margin-top: 2em;
+  color: #000;
+}
+
+.menu-info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+/* Preview section */
+.menu-preview {
+  margin-top: 3em;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #000;
+  text-align: center;
+}
+
+/* Close Icon */
+.menu-close-icon {
+  display: flex;
+  align-items: flex-end;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .menu-link-item-holder a {
+      font-size: 1.5em;
+  }
+  
+  .menu-copy {
+      padding-top: 2em;
+  }
+
+  .menu-close-icon {
+      display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .menu-link-item-holder a {
+      font-size: 1.2em;
+  }
+
+  .menu-preview {
+      font-size: 1em;
+  }
+}
+/* Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  z-index: 100;
+  overflow: hidden;
+  font-family: 'Arial', sans-serif;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.menu-logo {
+  height: 50px;
+}
+
+.close-icon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.overlay-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.menu-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.nav-links {
+  list-style-type: none;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  line-height: 3;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.nav-links li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-links li:hover {
+  color: #ffd700;
+}
+
+.contact-info {
+  position: absolute;
+  right: 20px;
+  bottom: 150px;
+  text-align: right;
+}
+
+.website-url,
+.phone-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+}
+/* Button Styling */
+.button-row {
+  display: flex;
+  gap : 10%;
+  justify-content: space-around;
+  margin-top: 20px ;
+  
+}
+ 
+/* Main Container */
+.premium-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: 'Cinzel Decorative', serif; /* Elegant serif font */
+  position: relative;
+  padding: 10px;
+  background: transparent; /* Transparent background */
+}
+
+/* Logo Icon Styling */
+.logo-icon {
+  background: radial-gradient(circle, #ffdd00, #c1a06b); /* Subtle gradient for elegance */
+  padding: 20px;
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: 15px;
+  border: 3px solid rgba(255, 215, 0, 0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Icon Hover Effect */
+.logo-icon:hover {
+  transform: scale(1.05); /* Slight scale-up on hover */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Main Logo Text Styling */
+.logo-main {
+  font-size: 2rem;
+  letter-spacing: 3px;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  background: linear-gradient(to bottom, black, #2E2E2E); /* Gradient for light mode */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Keep the text transparent to show the gradient */
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+  
+}
+
+/* Dark Mode Specific Styles */
+.dark-mode .logo-main {
+  font-size: 2rem;
+  letter-spacing: 3px;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  background: linear-gradient(to bottom, #ffcc00, #ffd700); /* Gradient for light mode */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* Keep the text transparent to show the gradient */
+  animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.8), /* Gold glow */
+               0 0 20px rgba(255, 215, 0, 0.6);
+}
+
+ 
+
+
+/* Subtext Styling */
+.logo-sub {
+  font-size: 0.5rem;
+  letter-spacing: 3px;
+  color: rgba(255, 223, 0, 0.85); /* Subtle gold shade */
+  font-family: 'Lora', serif; /* Premium serif font for subtext */
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.4);
+  margin-top: -5px;
+  animation: fadeInUp 1.5s ease-in-out;
+  background-color: #000;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Container for centered content */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+/* Paragraph Styling */
+.home-desc {
+  font-size: 0.8rem; /* Minimal font size for readability */
+  font-family: 'Playfair Display', serif;
+  margin: 10px 20px;
+  line-height: 1.5;
+  color: #000; /* Default color for light mode */
+  text-align: center;
+}
+
+/* Company Name Styling */
+.company-name {
+  font-weight: bold;
+  color: #cba135; /* Slightly darker gold for distinction */
+}
+
+/* Dark Mode Styling for Paragraph */
+body.dark-mode .home-desc,
+body.dark-mode .company-name {
+  color: #fff; /* White text for dark mode */
+}
+
+/* Down Arrow Styling */
+.down-arrow {
+  font-size: 2.5rem;
+  margin-top: 5vh;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  color: #000; /* Default color for light mode */
+  display: flex;
+  justify-content: center;
+  
+}
+
+.down-arrow:hover {
+  transform: scale(1.1);
+}
+
+/* Dark Mode Styling for Down Arrow */
+body.dark-mode .down-arrow {
+  color: #fff; /* White arrow for dark mode */
+}
+
+/* Button Row Container */
+.button-row {
+  display: flex;
+  gap: 40vw;
+  margin-top: 25px;
+}
+
+/* Button Styling */
+.explore-button, .contact-button {
+  border: 2px solid #DAA520; /* Gold border for premium feel */
+  background: transparent;
+  color: #000000;
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family:  'play-fair';
+  border-radius: 33px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding : 15px;
+
+}
+
+/* Hover effect for buttons */
+.explore-button:hover, .contact-button:hover {
+  background-color: #CFB53B;
+  color: #000000;
+}
+
+/* Light Mode Adjustments */
+body.light-mode .home-desc, 
+body.light-mode .down-arrow,
+body.light-mode .explore-button,
+body.light-mode .contact-button
+{
+  color: #000; /* Black text and arrow for light mode */
+}
+
+/* Dark Mode Adjustments */
+body.dark-mode .home-desc, 
+body.dark-mode .down-arrow,
+body.dark-mode .explore-button,
+body.dark-mode .contact-button{
+  color: #fff; /* White text and arrow for dark mode */
+}
+
+/* CSS Variables for Light and Dark Modes */
+:root {
+  --background-light: #f7f7f9;
+  --background-dark: #222;
+  --text-light: #222;
+  --text-dark: #f7f7f9;
+  --border-light: #ddd;
+  --border-dark: #444;
+  --highlight-light: #ffab00;
+  --highlight-dark: #ffab00;
+}
+
+body {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+.services-section {
+  padding: 5rem 10rem;
+  background-color: var(--background-light); /* Light background for contrast */
+  text-align: center;
+  position: relative; /* Added for potential effects */
+}
+
+body.dark-mode .services-section {
+  background-color: var(--background-dark); /* Dark background */
+}
+
+.services-heading {
+  font-size: 2.5rem;
+  color: var(--text-light);
+  font-weight: 700;
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+}
+
+body.dark-mode .services-heading {
+  color: var(--text-dark); /* Dark mode text */
+}
+
+.services-heading::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 4px;
+  background-color: var(--highlight-light);
+  margin: 1rem auto 0;
+}
+
+body.dark-mode .services-heading::after {
+  background-color: var(--highlight-dark); /* Highlight for dark mode */
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two cards per row on desktop */
+  gap: 2.5rem;
+}
+
+.service-item {
+  padding: 2rem;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
+  opacity: 0; /* Start with hidden opacity for animation */
+  transform: translateY(20px); /* Slide up from below */
+}
+
+/* Specific background colors for different cards */
+.service-item:nth-child(1) {
+  background: linear-gradient(to bottom right, #ffcccc, #ff9999); /* Light red */
+}
+
+.service-item:nth-child(2) {
+  background: linear-gradient(to bottom right, #ccffcc, #99ff99); /* Light green */
+}
+
+.service-item:nth-child(3) {
+  background: linear-gradient(to bottom right, #ccccff, #9999ff); /* Light blue */
+}
+
+.service-item:nth-child(4) {
+  background: linear-gradient(to bottom right, #ffffcc, #ffff99); /* Light yellow */
+}
+
+.service-item:nth-child(5) {
+  background: linear-gradient(to bottom right, #ffccff, #ff99ff); /* Light pink */
+}
+
+.service-item:nth-child(6) {
+  background: linear-gradient(to bottom right, #e0e0e0, #f0f0f0); /* Light grey */
+}
+
+/* Dark mode styles */
+body.dark-mode .service-item {
+  background: linear-gradient(to bottom right, #333, #444);
+  border: 1px solid var(--border-dark); /* Dark mode border */
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  border-color: var(--highlight-light);
+}
+
+body.dark-mode .service-item:hover {
+  border-color: var(--highlight-dark); /* Highlight for dark mode */
+}
+
+.service-item h4 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+body.dark-mode .service-item h4 {
+  color: var(--text-dark); /* Dark mode heading text */
+}
+
+.service-item h4::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: var(--highlight-light);
+  margin-top: 0.5rem;
+  border-radius: 3px;
+}
+
+body.dark-mode .service-item h4::after {
+  background-color: var(--highlight-dark); /* Highlight for dark mode */
+}
+
+.service-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.service-item ul li {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease-in-out;
+}
+
+body.dark-mode .service-item ul li {
+  color: var(--text-dark); /* Dark mode list item text */
+}
+
+.service-item ul li::before {
+  content: '✔';
+  color: var(--highlight-light);
+  margin-right: 0.5rem;
+  font-weight: bold;
+}
+
+body.dark-mode .service-item ul li::before {
+  color: var(--highlight-dark); /* Highlight for dark mode */
+}
+
+.service-item ul li:hover {
+  color: var(--text-light);
+}
+
+body.dark-mode .service-item ul li:hover {
+  color: var(--text-dark); /* Dark mode hover text */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .services-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .services-heading {
+    font-size: 2rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr; /* One card per row on mobile */
+  }
+
+  .service-item h4 {
+    font-size: 1.5rem;
+  }
+
+  .service-item ul li {
+    font-size: 1rem;
+  }
+}
+
+/* Animation for service items */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation on load */
+.service-item {
+  animation: fadeInUp 0.5s ease forwards; /* Apply animation */
+}
+
+.service-item:nth-child(1) { animation-delay: 0.1s; }
+.service-item:nth-child(2) { animation-delay: 0.2s; }
+.service-item:nth-child(3) { animation-delay: 0.3s; }
+.service-item:nth-child(4) { animation-delay: 0.4s; }
+.service-item:nth-child(5) { animation-delay: 0.5s; }
+.service-item:nth-child(6) { animation-delay: 0.6s; }
+
+ 
+ 
+
+/* Testimonials container */
+.testimonials-container {
+  max-width: 1200px; /* Max width for larger screens */
+  margin: 0 auto; /* Center the container */
+  padding: 40px 20px; /* Add padding around the container */
+  background-color: var(--testimonial-container-light); /* Light mode background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 20px var(--shadow-light); /* Light mode shadow */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+ 
+
+/* Heading styles */
+.testimonials-heading {
+  text-align: center; /* Centered heading */
+  font-size: 2.5rem; /* Font size for heading */
+  color: #000000; /* Light mode heading color */
+  margin-bottom: 30px; /* Spacing below the heading */
+  font-weight: bold; /* Bold font */
+}
+
+/* Dark mode heading */
+
+.dark-mode .testimonials-heading{
+    color: var(--highlight-color) /* Dark mode heading color */
+  }
+
+
+/* Testimonials wrapper for scrolling */
+.testimonials-wrapper {
+  display: flex; /* Use flexbox for horizontal layout */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  padding: 10px 0; /* Padding around the wrapper */
+  cursor: grab; /* Indicate draggable area */
+}
+
+/* Testimonial card styles */
+.testimonial-card {
+  flex: 0 0 auto; /* Prevent flex items from shrinking */
+  width: 40vw; /* Fixed width for cards */
+  margin-right: 20px; /* Spacing between cards */
+  padding: 20px; /* Padding inside each card */
+  background-color: #ffffff; /* Light mode card */
+  border-radius: 10px; /* Rounded corners for cards */
+  box-shadow: 0 2px 10px var(--shadow-light); /* Light mode shadow */
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, filter 0.3s; /* Smooth transition */
+  position: relative; /* Position for glowing effect */
+  border: 2px solid var(--highlight-dark);
+  cursor: grab; /* Indicate draggable content */
+  user-select: none; /* Prevent text selection while dragging */
+}
+
+/* Mobile view styles */
+@media (max-width: 600px) {
+  .testimonial-card {
+    flex: 0 0 auto; /* Prevent flex items from shrinking */
+    width: 80vw; /* Fixed width for cards */
+    margin-right: 20px; /* Spacing between cards */
+    padding: 20px; /* Padding inside each card */
+    background-color: #ffffff; /* Light mode card */
+    border-radius: 10px; /* Rounded corners for cards */
+    box-shadow: 0 2px 10px var(--shadow-light); /* Light mode shadow */
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, filter 0.3s; /* Smooth transition */
+    position: relative; /* Position for glowing effect */
+    border: 2px solid var(--highlight-dark);
+    cursor: grab; /* Indicate draggable content */
+    user-select: none; /* Prevent text selection while dragging */
+  }
+  /* Testimonials wrapper for scrolling */
+.testimonials-wrapper {
+   width:200vw;
+}
+  
+}
+
+
+
+.dark-mode  .testimonial-card {
+    background-color: var(--testimonial-card-dark); /* Dark mode card */
+    box-shadow: 0 2px 10px var(--shadow-dark); /* Dark mode shadow */
+  }
+
+
+/* Testimonial card glow effect */
+.testimonial-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  filter: drop-shadow(0 0 15px var(--glow-light)); /* Light mode glow */
+  border: 2px solid #ffffff;
+  
+}
+
+ 
+
+
+/* Image styles */
+.testimonial-image {
+  width: 100%; /* Full width of the card */
+  height: auto; /* Auto height to maintain aspect ratio */
+  border-radius: 50%; /* Circular images */
+  margin-bottom: 15px; /* Spacing below image */
+}
+
+/* Name styles */
+.testimonial-name {
+  font-size: 1.5rem; /* Font size for name */
+  font-weight: bold; /* Bold font */
+  color: var(--text-light); /* Light mode name color */
+  margin-bottom: 10px; /* Spacing below name */
+}
+
+
+.dark-mode .testimonial-name {
+    color: var(--text-dark); /* Dark mode name color */
+  }
+
+/* Text styles */
+.testimonial-text {
+  font-size: 1rem; /* Font size for text */
+  color: #555; /* Grey color for text */
+  margin-bottom: 10px; /* Spacing below text */
+  line-height: 1.5; /* Line height for readability */
+}
+
+.dark-mode .testimonial-text {
+  color : #FFFFF7;
+}
+/* Position styles */
+.testimonial-position {
+  font-size: 0.9rem; /* Smaller font size for position */
+  color: #777; /* Lighter grey for position text */
+  font-style: italic; /* Italic style for emphasis */
+}
+
+/* Dark mode position */
+@media (prefers-color-scheme: dark) {
+  .testimonial-position {
+    color: #aaa; /* Light grey for position in dark mode */
+  }
+}
+
+
+.contactSection {
+  padding: 80px 0;
+  text-align: center;
+  transition: background-color 0.4s ease;
+  width : 100vw;
+}
+
+/* Light and dark themes */
+.light {
+  background-color: var(--background-light);
+  color: var(--text-light);
+}
+
+.dark {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+.innerWidth {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.contactSection h1 {
+  font-size: 20px;
+  color: inherit;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 400;
+}
+
+.name,
+.email,
+.message {
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  padding: 10px 6px;
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+
+.name {
+  float: left;
+  width: 270px;
+}
+
+.email {
+  float: right;
+  width: 270px;
+}
+
+.message {
+  min-width: 100%;
+  max-width: 100%;
+}
+
+/* Button styling */
+.contactSection button {
+  background: none;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  padding: 12px 40px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: 0.4s linear;
+  cursor: pointer;
+}
+
+.contactSection button:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+/* Toggle button */
+.themeToggle {
+  margin-top: 20px;
+  background: none;
+  color: var(--accent-color);
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .name,
+  .email {
+    width: 100%;
+    float: none;
+  }
+}
