@@ -3,14 +3,14 @@
   --background-light: #ffffff;
   --background-dark: #0a0a0a;
   --foreground-light: #171717;
-  --foreground-dark: #ededed;
-  --highlight-color: #ffffff; /* Golden color */
+  --foreground-dark: #ffff;
+  --highlight-color: #ffff; /* Golden color */
 }
 
 /* Apply Dark Mode Colors for Dark Mode Preferences */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-light: #0a0a0a;
+    --background-light: #ffffff;
     --foreground-light: #ededed;
   }
 }
@@ -29,7 +29,7 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #D3D3D3;
+  background-color: var(--background-light);
   color: #0000;
   transition: background-color 0.5s ease, color 0.5s ease;
   -webkit-font-smoothing: antialiased;
@@ -644,234 +644,168 @@ body.dark-mode .home-desc,
 body.dark-mode .down-arrow,
 body.dark-mode .explore-button,
 body.dark-mode .contact-button{
-  color: #fff; /* White text and arrow for dark mode */
+  color: #ffffff; /* White text and arrow for dark mode */
+}
+
+/* Our Services Component Styles*/
+
+/* Container */
+.services-container {
+  padding: 2rem;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh; /* Ensures it takes up full viewport height */
+  width: 90vw; /* Container takes up 80% of viewport width */
+  margin: 0 auto; /* Centers the container */
+}
+
+
+/* Heading */
+.services-heading {
+  font-size: 4rem; /* Slightly larger font for emphasis */
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: var(--background-dark);
+  text-transform: lowercase; /* Adds a professional look */
+  letter-spacing: 0.1em; /* Improves readability */
+  font-family:'Dirtyline36Daysoftype2022' ;
+}
+.dark-mode .services-heading {
+  color: var(--background-light);
+}
+.dark-mode .services-text-head {
+  color: var(--background-light);
+}
+.dark-mode .services-text-para {
+  color: var(--background-light);
+}
+.dark-mode .services-text-button {
+  color: var(--background-light);
+  border: 2px solid #ffffff;
 }
  
-
-/* CSS Variables for Light and Dark Modes */
-:root {
-  --background-light: #f7f7f9;
-  --background-dark: #222;
-  --text-light: #222;
-  --text-dark: #f7f7f9;
-  --border-light: #ddd;
-  --border-dark: #444;
-  --highlight-light: #ffab00;
-  --highlight-dark: #ffab00;
-}
-
-body {
-  background-color: var(--background-light);
-  color: var(--text-light);
-}
-
-body.dark-mode {
-  background-color: var(--background-dark);
-  color: var(--text-dark);
-}
-.services-section {
-  padding: 5rem 10rem;
-  background-color: var(--background-light); /* Light background for contrast */
-  text-align: center;
-  position: relative; /* Added for potential effects */
-}
-
-body.dark-mode .services-section {
-  background-color: var(--background-dark); /* Dark background */
-}
-
-.services-heading {
-  font-size: 2.5rem;
-  color: var(--text-light);
-  font-weight: 700;
-  margin-bottom: 3rem;
-  position: relative;
-  display: inline-block;
-}
-
-body.dark-mode .services-heading {
-  color: var(--text-dark); /* Dark mode text */
-}
-
-.services-heading::after {
-  content: '';
-  display: block;
-  width: 50px;
-  height: 4px;
-  background-color: var(--highlight-light);
-  margin: 1rem auto 0;
-}
-
-body.dark-mode .services-heading::after {
-  background-color: var(--highlight-dark); /* Highlight for dark mode */
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Two cards per row on desktop */
-  gap: 2.5rem;
-}
-
-.service-item {
-  padding: 2rem;
-  border: 1px solid var(--border-light);
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, border-color 0.3s ease-in-out;
-  opacity: 0; /* Start with hidden opacity for animation */
-  transform: translateY(20px); /* Slide up from below */
-}
-
-/* Specific background colors for different cards */
-.service-item:nth-child(1) {
-  background: linear-gradient(to bottom right, #ffcccc, #ff9999); /* Light red */
-}
-
-.service-item:nth-child(2) {
-  background: linear-gradient(to bottom right, #ccffcc, #99ff99); /* Light green */
-}
-
-.service-item:nth-child(3) {
-  background: linear-gradient(to bottom right, #ccccff, #9999ff); /* Light blue */
-}
-
-.service-item:nth-child(4) {
-  background: linear-gradient(to bottom right, #ffffcc, #ffff99); /* Light yellow */
-}
-
-.service-item:nth-child(5) {
-  background: linear-gradient(to bottom right, #ffccff, #ff99ff); /* Light pink */
-}
-
-.service-item:nth-child(6) {
-  background: linear-gradient(to bottom right, #e0e0e0, #f0f0f0); /* Light grey */
-}
-
-/* Dark mode styles */
-body.dark-mode .service-item {
-  background: linear-gradient(to bottom right, #333, #444);
-  border: 1px solid var(--border-dark); /* Dark mode border */
-}
-
-.service-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  border-color: var(--highlight-light);
-}
-
-body.dark-mode .service-item:hover {
-  border-color: var(--highlight-dark); /* Highlight for dark mode */
-}
-
-.service-item h4 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--text-light);
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-body.dark-mode .service-item h4 {
-  color: var(--text-dark); /* Dark mode heading text */
-}
-
-.service-item h4::after {
-  content: '';
-  display: block;
-  width: 30px;
-  height: 3px;
-  background-color: var(--highlight-light);
-  margin-top: 0.5rem;
-  border-radius: 3px;
-}
-
-body.dark-mode .service-item h4::after {
-  background-color: var(--highlight-dark); /* Highlight for dark mode */
-}
-
-.service-item ul {
-  list-style: none;
-  padding: 0;
-}
-
-.service-item ul li {
-  font-size: 1.1rem;
-  color: var(--text-light);
-  margin: 0.5rem 0;
+.services-card {
   display: flex;
-  align-items: center;
-  transition: color 0.2s ease-in-out;
+  flex-direction: row; /* Side-by-side layout for image and text */
+  width: 100%;
+  background-color: var(--card-bg);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+  margin-top:10vh;
 }
 
-body.dark-mode .service-item ul li {
-  color: var(--text-dark); /* Dark mode list item text */
+.services-card:hover {
+  transform: translateY(-5px); /* Gives an elevation effect */
 }
 
-.service-item ul li::before {
-  content: '✔';
-  color: var(--highlight-light);
-  margin-right: 0.5rem;
+/* Image Section */
+.services-image {
+  width: 40vw; /* Image takes up 40% of the container width */
+  height: auto;
+  object-fit:cover;
+  transition: transform 0.3s ease; /* Animation for image hover */
+  border-radius: 12px;
+}
+
+/* Text Section */
+.services-text {
+  width: 40vw; /* Text section takes up 40% of the container width */
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem; /* Adds spacing between text elements */
+}
+
+/* Text Head */
+.services-text-head {
+  font-size: 1.8rem; /* Larger for better visibility */
+  font-weight: 600;
+  color: var(--background-dark);
+  font-family: 'Dirtyline36Daysoftype2022';
+}
+
+/* Text Paragraph */
+.services-text-para {
+  font-size: 1rem;
+  line-height: 1.8; /* Improved readability */
+  color: var(--background-dark);
+  margin-bottom: 1rem;
+}
+
+/* Button */
+.services-text-button {
+  border: 2px solid #000000; /* Gold border for premium feel */
+  background: transparent;
+  color: var(--background-dark);
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-transform: uppercase;
   font-weight: bold;
+  font-family:  'play-fair';
+  border-radius: 33px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding : 15px;
+  margin-right: auto;
 }
 
-body.dark-mode .service-item ul li::before {
-  color: var(--highlight-dark); /* Highlight for dark mode */
+.services-text-button:hover {
+  background-color: var(--button-hover-bg);
+  transform: translateY(-3px); /* Subtle lift effect on hover */
 }
 
-.service-item ul li:hover {
-  color: var(--text-light);
-}
-
-body.dark-mode .service-item ul li:hover {
-  color: var(--text-dark); /* Dark mode hover text */
-}
-
-/* Responsive Styling */
+/* GSAP Animations */
 @media (max-width: 768px) {
-  .services-section {
-    padding: 3rem 1.5rem;
+  .services-card {
+    flex-direction: row; /* Stacks the content vertically on smaller screens */
+  }
+
+  .services-image, .services-text {
+    width: 100%;
+  }
+}
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .services-card {
+    flex-direction: column; /* Stack image on top of the text */
+    align-items: center; /* Center the card content */
+  }
+
+  .services-image {
+    width: 100%; /* Image takes full width */
+    margin-bottom: 1rem; /* Adds spacing between image and text */
+    border-radius: 12px; /* Retain rounded corners */
+  }
+
+  .services-text {
+    width: 90%; /* Text section takes 90% of the viewport width */
+    padding: 1rem; /* Adjust padding for smaller screens */
+    text-align: center; /* Center-align text for better appearance */
   }
 
   .services-heading {
-    font-size: 2rem;
+    font-size: 2.5rem; /* Reduce heading size for smaller screens */
+    margin-bottom: 1.5rem;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr; /* One card per row on mobile */
+  .services-text-head {
+    font-size: 1.5rem; /* Adjust text head size */
+    margin-bottom: 0.5rem; /* Add spacing below heading */
   }
 
-  .service-item h4 {
-    font-size: 1.5rem;
+  .services-text-para {
+    font-size: 0.9rem; /* Slightly smaller text size */
+    line-height: 1.6; /* Improved readability on small screens */
+    margin-bottom: 1rem;
   }
 
-  .service-item ul li {
-    font-size: 1rem;
-  }
-}
-
-/* Animation for service items */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  .services-text-button {
+    padding: 10px 15px; /* Adjust button size */
+    font-size: 0.9rem;
   }
 }
 
-/* Apply animation on load */
-.service-item {
-  animation: fadeInUp 0.5s ease forwards; /* Apply animation */
-}
-
-.service-item:nth-child(1) { animation-delay: 0.1s; }
-.service-item:nth-child(2) { animation-delay: 0.2s; }
-.service-item:nth-child(3) { animation-delay: 0.3s; }
-.service-item:nth-child(4) { animation-delay: 0.4s; }
-.service-item:nth-child(5) { animation-delay: 0.5s; }
-.service-item:nth-child(6) { animation-delay: 0.6s; }
 
 
 
@@ -1039,10 +973,10 @@ body.dark-mode .service-item ul li:hover {
 /* Light and dark themes */
 .light {
   background-color: var(--background-light);
-  color: var(--text-light);
+  color: var(--background-dark);
 }
 
-.dark .contactSection{
+.dark-mode .contactSection{
   background-color: var(--background-dark);
   color: #ffffff;
 }
@@ -1091,19 +1025,28 @@ body.dark-mode .service-item ul li:hover {
 
 /* Button styling */
 .contactSection button {
-  background: none;
-  color: var(--accent-color);
-  border: 1px solid var(--accent-color);
-  padding: 12px 40px;
-  border-radius: 8px;
-  font-size: 14px;
-  transition: 0.4s linear;
+  border: 2px solid #000000; /* Gold border for premium feel */
+  background: transparent;
+  color: var(--background-dark);
+  padding: 10px 20px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family:  'play-fair';
+  border-radius: 33px;
   cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding : 15px;
+  margin-right: auto;
 }
 
+.dark-mode  .contactSection button {
+  border: 2px solid #ffffff;
+  color:#ffffff;
+}
 .contactSection button:hover {
-  background: var(--accent-color);
-  color: #fff;
+  background-color: var(--button-hover-bg);
+  transform: translateY(-3px);
 }
 
 /* Toggle button */
