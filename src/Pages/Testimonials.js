@@ -23,7 +23,7 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <div className="testimonials-container">
-      <h2 className="testimonials-heading">What Our Clients Say</h2>
+      <h2 className="testimonials-heading">what our clients say</h2>
       <motion.div className="testimonials-wrapper" drag="x" dragConstraints={{ left: -500, right: 0 }}>
         {testimonials.map((testimonial, index) => (
           <motion.div
@@ -40,6 +40,7 @@ const Testimonials = () => {
           </motion.div>
         ))}
       </motion.div>
+ 
     </div>
   );
 };

@@ -30,23 +30,26 @@ const Services = () => {
     <section className="services-container">
       <h2 className="services-heading">our services</h2>
       <div className="services-card">
-        {/* Text Section */}
-        <div ref={textRef} className="services-text">
-          <h3 className="services-text-head">digital marketing & branding</h3>
-          <p className="services-text-para">
-            Discover exceptional services tailored to meet all your needs, with
-            cutting-edge solutions that deliver the best results.
-          </p>
-          <button className="services-text-button">View More</button>
-        </div>
-
-        {/* Image Section */}
-        <img
+         {/* Image Section */}
+         <img
           ref={imageRef}
           className="services-image"
           src="./images/Digital-Marketing.jpg" // Replace with your image path
           alt="Service Image"
         />
+        {/* Text Section */}
+        <div ref={textRef} className="services-text">
+          <h3 className="services-text-head">digital marketing & branding</h3>
+           <ul className="services-text-para">
+           <li>Complete content strategy</li>
+            <li>Marketing collaterals</li>
+            <li>Social Media Optimization (SMO)</li>
+            <li>Profile creation & management</li>
+           </ul>
+          <button className="services-text-button">View Work</button>
+        </div>
+
+       
       </div>
       <div className="services-card">
         {/* Image Section */}
@@ -59,24 +62,16 @@ const Services = () => {
         {/* Text Section */}
         <div ref={textRef} className="services-text">
           <h3 className="services-text-head">website creation & management</h3>
-          <p className="services-text-para">
-            Discover exceptional services tailored to meet all your needs, with
-            cutting-edge solutions that deliver the best results.
-          </p>
-          <button className="services-text-button">View More</button>
+          <ul className="services-text-para">
+          <li>Customized website design</li>
+            <li>SEO-friendly content creation</li>
+            <li>Mobile optimization</li>
+            <li>Regular maintenance & updates</li>
+          </ul>
+          <button className="services-text-button">View Work</button>
         </div> 
       </div>
       <div className="services-card">
-        {/* Text Section */}
-        <div ref={textRef} className="services-text">
-          <h3 className="services-text-head">social media management</h3>
-          <p className="services-text-para">
-            Discover exceptional services tailored to meet all your needs, with
-            cutting-edge solutions that deliver the best results.
-          </p>
-          <button className="services-text-button">View More</button>
-        </div>
-
         {/* Image Section */}
         <img
           ref={imageRef}
@@ -84,6 +79,19 @@ const Services = () => {
           src="./images/website-management.jpeg" // Replace with your image path
           alt="Service Image"
         />
+        {/* Text Section */}
+        <div ref={textRef} className="services-text">
+          <h3 className="services-text-head">social media management</h3>
+          <ul className="services-text-para">
+          <li>Profile setup & meta ads</li>
+            <li>Post content (10-15 per month)</li>
+            <li>Commenting strategy</li>
+            <li>Hashtag & trend optimization</li>
+          </ul>
+          <button className="services-text-button">View Work</button>
+        </div>
+
+        
       </div>
     </section>
   );

@@ -128,7 +128,7 @@ a {
 }
 
 .dark-mode .toggle-button {
-  color: var(--highlight-color);
+  color: var(--background-light);
 }
 
 /* Hamburger Menu Icon */
@@ -364,7 +364,7 @@ a, p {
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
+  background-color: var(--background-light);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -373,6 +373,10 @@ a, p {
   z-index: 100;
   overflow: hidden;
   font-family: 'Arial', sans-serif;
+}
+
+.dark-mode .menu-overlay {
+  background-color: var(--background-dark);
 }
 
 .menu-header {
@@ -389,16 +393,22 @@ a, p {
 .close-icon {
   font-size: 2rem;
   cursor: pointer;
+  color : var(--background-dark)
+}
+.dark-mode .close-icon {
+  color : var(--background-light)
 }
 
 .overlay-toggle {
   background: none;
   border: none;
   cursor: pointer;
-  color: #fff;
+  color: var(--background-dark);
   font-size: 1.5rem;
 }
-
+.dark-mode .overlay-toggle {
+  color: var(--background-light);
+}
 .menu-content {
   flex-grow: 1;
   display: flex;
@@ -414,8 +424,11 @@ a, p {
   padding: 0;
   line-height: 1.5;
   font-family: 'Dirtyline36Daysoftype2022';
+  color : var(--background-dark)
 }
-
+.dark-mode .nav-links {
+  color : var(--background-light);
+}
 .nav-links li {
   cursor: pointer;
   transition: color 0.3s ease;
@@ -423,6 +436,15 @@ a, p {
 
 .nav-links li:hover {
   color: #ffd700;
+  transform: translate(25px,0);
+  transition: transform 0.3s ease;
+}
+.dark-mode .navlinks {
+  color:var(--background-light)
+}
+.dark-mode .website-url,
+.phone-number {
+  color:var(--background-light)
 }
 
 .contact-info {
@@ -430,25 +452,47 @@ a, p {
   right: 20px;
   bottom: 150px;
   text-align: right;
+  color : var(--background-dark)
 }
-
-.website-url,
+.dark-mode .contact-info {
+  color : var(--background-light)
+}
+.website-url {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 .phone-number {
   font-size: 1.2rem;
   font-weight: bold;
+  color: #000000;
+}
+.dark-mode .phone-number{
   color:#ffffff;
 }
-
 .social-links {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   margin-top: 2rem;
+  justify-content: flex-end;
+  width:92vw;
 }
 
-.social-links img {
-  width: 30px;
-  height: 30px;
+ .dark-mode .social-media-icon{
+  background-color: var(--background-light);
+  border-radius: 15px;
+ }
+
+@media (max-width : 600px) {
+  .nav-links {
+    font-size: 3rem;
+  }
+  .contact-info{
+    display: none;
+  }
+   
 }
+
+
 /* Button Styling */
 .button-row {
   display: flex;
@@ -457,6 +501,8 @@ a, p {
   margin-top: 20px ;
   
 }
+
+
  
 /* Main Container */
 .premium-logo {
@@ -693,9 +739,13 @@ body.dark-mode .contact-button{
   transition: transform 0.3s ease-in-out, background-color 0.3s ease;
   margin-top:10vh;
 }
-
+@media (min-width: 600px) {
+.services-card:nth-child(3)  {
+  flex-direction: row-reverse;
+  margin-left : -7vw; /* Image on the right for desktop view */
+}}
 .services-card:hover {
-  transform: translateY(-5px); /* Gives an elevation effect */
+  transform: scale(1.1); /* Gives an elevation effect */
 }
 
 /* Image Section */
@@ -731,6 +781,7 @@ body.dark-mode .contact-button{
   line-height: 1.8; /* Improved readability */
   color: var(--background-dark);
   margin-bottom: 1rem;
+  list-style-type: none;
 }
 
 /* Button */
@@ -765,47 +816,66 @@ body.dark-mode .contact-button{
     width: 100%;
   }
 }
-/* Mobile Responsiveness */
 @media (max-width: 768px) {
+  .services-container {
+   
+    width: 100vw; /* Container takes up 80% of viewport width */
+     
+  }
+  /* Card Layout */
   .services-card {
-    flex-direction: column; /* Stack image on top of the text */
+    flex-direction: column; /* Stack content vertically */
     align-items: center; /* Center the card content */
+    margin-top: 2rem; /* Adjust spacing between cards */
+    padding: 1rem; /* Add padding for better spacing */
+    
   }
 
+  /* Image Section */
   .services-image {
-    width: 100%; /* Image takes full width */
-    margin-bottom: 1rem; /* Adds spacing between image and text */
-    border-radius: 12px; /* Retain rounded corners */
+    width: 90%; /* Image takes 90% of the container width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 1rem; /* Add spacing between image and text */
+    border-radius: 12px; /* Rounded corners */
   }
 
+  /* Text Section */
   .services-text {
-    width: 90%; /* Text section takes 90% of the viewport width */
-    padding: 1rem; /* Adjust padding for smaller screens */
-    text-align: center; /* Center-align text for better appearance */
+    width: 100%; /* Text section takes full width */
+    padding: 1rem; /* Add padding */
+    text-align: center; /* Center-align text for better readability */
+    gap: 0.8rem; /* Adjust spacing between text elements */
   }
 
+  /* Heading */
   .services-heading {
-    font-size: 2.5rem; /* Reduce heading size for smaller screens */
-    margin-bottom: 1.5rem;
+    font-size: 2rem; /* Reduce heading size for smaller screens */
+    margin-bottom: 1.5rem; /* Adjust spacing below heading */
   }
 
+  /* Text Head */
   .services-text-head {
-    font-size: 1.5rem; /* Adjust text head size */
-    margin-bottom: 0.5rem; /* Add spacing below heading */
+    font-size: 1.3rem; /* Adjust text head size */
+    font-weight: bold;
+    margin-bottom: 0.8rem; /* Add spacing below text head */
   }
 
+  /* Text Paragraph */
   .services-text-para {
-    font-size: 0.9rem; /* Slightly smaller text size */
-    line-height: 1.6; /* Improved readability on small screens */
-    margin-bottom: 1rem;
+    font-size: 1rem; /* Keep text readable */
+    line-height: 1.6; /* Maintain good line spacing */
+    margin-bottom: 1rem; /* Add spacing below paragraph */
   }
 
+  /* Button */
   .services-text-button {
-    padding: 10px 15px; /* Adjust button size */
-    font-size: 0.9rem;
+    padding: 12px 20px; /* Slightly larger button padding */
+    font-size: 1rem; /* Keep font size readable */
+    border-radius: 25px; /* Make the button look modern */
+    margin: 0 auto; /* Center the button */
+    width: auto; /* Ensure button doesn't stretch */
   }
 }
-
 
 
 
@@ -828,11 +898,13 @@ body.dark-mode .contact-button{
 
 /* Heading styles */
 .testimonials-heading {
-  text-align: center; /* Centered heading */
-  font-size: 2.5rem; /* Font size for heading */
+  text-align: left; /* Centered heading */
+  font-size: 4rem; /* Font size for heading */
   color: #000000; /* Light mode heading color */
   margin-bottom: 30px; /* Spacing below the heading */
-  font-weight: bold; /* Bold font */
+  font-family: 'Dirtyline36Daysoftype2022'; 
+  
+
 }
 
 /* Dark mode heading */
@@ -1046,7 +1118,8 @@ body.dark-mode .contact-button{
 }
 .contactSection button:hover {
   background-color: var(--button-hover-bg);
-  transform: translateY(-3px);
+  transform: scale(1.1);
+  transition: transition 0.3 ease;
 }
 
 /* Toggle button */
@@ -1077,3 +1150,80 @@ body.dark-mode .contact-button{
 .dark-mode .contact-head {
   color : #ffffff;
 }
+
+/* Footer Component Styles */
+/* Footer Styles */
+
+.footer-head {
+  font-family: 'Dirtyline36Daysoftype2022';
+  text-transform: lowercase;
+  font-size: 8rem;
+  text-align: center;
+  color:var(--background-dark);
+  line-height: 0.75;
+}
+.dark-mode .footer-head {
+  color : var(--background-light);
+}
+.footer-container {
+  padding: 20px;
+  background-color: var(--background-light);
+  width:80vw;
+  margin-left : 10vw;
+}
+.dark-mode .footer-container {
+  background-color: var(--background-dark);
+}
+.social-media {
+  margin: 10px 0;
+}
+
+.social-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.social-row:hover {
+  transform: scale(1.1); /* Scales the component to 110% of its size */
+  transition: transform 0.3s ease; /* Smooth transition effect */
+}
+
+.social-heading {
+  font-size: 4rem;
+  color : #0e0e0e; /* LinkedIn color */
+  margin: 0;
+  font-family: 'poppins' , serif;
+  text-transform: capitalize;
+}
+
+.dark-mode .social-heading {
+  color : #ffffff;
+}
+
+.social-icon .icon {
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+/* Mobile view styles */
+@media (max-width: 600px) {
+  .social-heading {
+    font-size: 2rem;
+  }
+  .social-icon .icon {
+    width: 30px;
+    height: 30px;
+  
+  }
+  .footer-head {
+    font-size: 3rem;
+  }
+}
+

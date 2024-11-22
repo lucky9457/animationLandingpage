@@ -3,6 +3,7 @@ import Home from '../Pages/Home';
 import Services from '../Pages/Services';
 import Testimonials from '..//Pages/Testimonials';
 import Contact from '../Pages/Contact'
+import Footer from '../Pages/Footer'
 
 export default function Page() {
     return (
@@ -10,6 +11,7 @@ export default function Page() {
                 <Home />
                 <Services />
                 <Testimonials />
+                <Footer />
                 <Contact />
         </div>
     );

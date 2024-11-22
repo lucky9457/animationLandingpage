@@ -78,25 +78,26 @@ export default function Navbar({
                 <li>testimonials</li>
                 <li>contact</li>
               </ul>
+              </div>
               <div className="contact-info">
                 <p className="website-url">sabeenadigitalmediaservices.com</p>
                 <p className="phone-number">123-456-7866-5564</p>
               </div>
               <div className="social-links">
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                  <FaFacebook />
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-media-icon">
+                  <FaFacebook size={50}/>
                 </a>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                  <FaTwitter />
+                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-media-icon">
+                  <FaTwitter size={50}/>
                 </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                  <FaInstagram />
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-media-icon">
+                  <FaInstagram size={50}/>
                 </a>
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                  <FaLinkedin />
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-media-icon">
+                  <FaLinkedin size={50}/>
                 </a>
               </div>
-            </div>
+            
           </motion.div>
         )}
       </AnimatePresence>
