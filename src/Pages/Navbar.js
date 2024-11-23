@@ -74,7 +74,7 @@ export default function Navbar({
               <ul className="nav-links">
                 <li>home</li>
                 <li>services</li>
-                <li>related works</li>
+                <li>our works</li>
                 <li>testimonials</li>
                 <li>contact</li>
               </ul>

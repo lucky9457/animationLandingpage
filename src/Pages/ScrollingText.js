@@ -3,9 +3,9 @@ import styles from '../styles/globals.css';
 
 const ScrollingText = () => {
     const firstLine =
-    "-beyond boundaries-beyond boundaries ".repeat(30).trim();
+    "- beyond boundaries - beyond boundaries ".repeat(30).trim();
   const secondLine =
-    "-venture beyond the digital horizon- ".repeat(30).trim();
+    "- venture beyond the digital horizon ".repeat(30).trim();
   return (
     <div className="scrolling-text-container">
       <div className="scrolling-text">

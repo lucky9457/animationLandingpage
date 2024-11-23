@@ -50,7 +50,7 @@ export default function Home() {
 
           <main>
             <h2 className="home-heading">
-            lets orbit  success<br/> in the <br/>digital universe
+            let's orbit   success <br/>in the  digital universe
             </h2>
             <p className="home-desc">
             Launch your brand into the digital cosmos with powerful software, dynamic video creations <br/> and stellar web and app solutions. We guide your business to new galaxies of growth and success.

@@ -130,14 +130,14 @@ const Services = () => {
                 <li key={idx}>{item}</li>
               ))}
             </ul>
-            <button className="services-text-button">View Work</button>
+            <button className="services-text-button">More Info</button>
           </div>
         </div>
       ))}
 
       {/* Who We Are Section */}
       <div className="who-are-we">
-        <h2 className="who-are-we-head" ref={WhoWeAreRef}>who we are</h2>
+        <h2 className="who-are-we-head" ref={WhoWeAreRef}>who <br/> we are</h2>
         <h4 className="who-are-we-subhead">
           As a pioneering force in the digital galaxy, SDMS® blends creativity with
           cutting-edge technology to craft your brand’s journey through the stars.
