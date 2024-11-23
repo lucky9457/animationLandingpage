@@ -1,124 +1,158 @@
-"use client"; // for client-side animations with GSAP
+"use client"; // For client-side animations with GSAP
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import Stats from './Stats';
+import ScrollTrigger from "gsap/ScrollTrigger";
+import Stats from "./Stats";
 import "../styles/globals.css";
 
 const Services = () => {
-  const imageRef = useRef(null);
-  const textRef = useRef(null);
-
+  const headingRef = useRef(null);
+  const cardsRef = useRef([]);
+  const WhoWeAreRef = useRef([]);
+;
   useEffect(() => {
-    // GSAP animation for the image
-    gsap.from(imageRef.current, {
-      x: 200, // Slide in from right
-      opacity: 0,
-      duration: 1.5,
-      ease: "power3.out",
-    });
+    // Register ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
 
-    // GSAP animation for the text div
-    gsap.from(textRef.current, {
-      y: 50, // Slide in from below
-      opacity: 0,
-      duration: 1.5,
-      ease: "power3.out",
-      delay: 0.2, // Slight delay for staggered effect
+    // Animate the heading
+    gsap.fromTo(
+      headingRef.current,
+      { x: -100, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1.7,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 80%", // Start when the top of the heading is 80% of the viewport
+          toggleActions: "play reverse play reverse", // Replays the animation on scroll up and down
+        },
+      }
+    );
+    // Animate the heading
+    gsap.fromTo(
+      WhoWeAreRef.current,
+      { x: -100, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1.7,
+        ease: "power3.out",
+        scrollTrigger: {
+          
+          rigger: WhoWeAreRef.current,
+          start: "top 80%", // Start when the top of the heading is 80% of the viewport
+          toggleActions: "play reverse play reverse", // Replays the animation on scroll up and down
+        },
+      }
+    );
+
+    // Animate each card
+    cardsRef.current.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%", // Trigger animation when the card enters the viewport
+            toggleActions: "play reverse play reverse", // Replays the animation on scroll up and down
+          },
+        }
+      );
     });
   }, []);
 
   return (
     <section className="services-container">
-      <h2 className="services-heading">our services</h2>
-      <p className="our-services-tag">Like a constellation, our services align to create a universe of endless possibilities.</p>
-      <div className="services-card">
-         {/* Image Section */}
-         <img
-          ref={imageRef}
-          className="services-image"
-          src="./images/Digital-Marketing.jpg" // Replace with your image path
-          alt="Service Image"
-        />
-        {/* Text Section */}
-        <div ref={textRef} className="services-text">
-          <h3 className="services-text-head">digital solutions & development</h3>
-           <ul className="services-text-para">
-           <li>Software as a Service (SaaS)</li>
-            <li>Automation / API Creation</li>
-            <li>Website / App Creation</li>
-            <li>POS Systems</li>
-            <li>UI/UX Design</li>
-           </ul>
-          <button className="services-text-button">View Work</button>
-        </div>
+      {/* Heading */}
+      <h2 ref={headingRef} className="services-heading">
+        our services
+      </h2>
+      <p className="our-services-tag">
+        Like a constellation, our services align to create a universe of endless
+        possibilities.
+      </p>
 
-       
-      </div>
-      <div className="services-card">
-        {/* Image Section */}
-        <img
-          ref={imageRef}
-          className="services-image"
-          src="./images/socialmedia-management.jpeg" // Replace with your image path
-          alt="Service Image"
-        />
-        {/* Text Section */}
-        <div ref={textRef} className="services-text">
-          <h3 className="services-text-head">creative & content services</h3>
-          <ul className="services-text-para">
-          <li>Video Creation (from Reels to AR/VR videos)</li>
-            <li>Content Writing</li>
-          </ul>
-          <button className="services-text-button">View Work</button>
-        </div> 
+      {/* Service Cards */}
+      {[
+        {
+          imgSrc: "./images/Digital-Marketing.jpg",
+          title: "digital solutions & development",
+          list: [
+            "Software as a Service (SaaS)",
+            "Automation / API Creation",
+            "Website / App Creation",
+            "POS Systems",
+            "UI/UX Design",
+          ],
+        },
+        {
+          imgSrc: "./images/socialmedia-management.jpeg",
+          title: "creative & content services",
+          list: ["Video Creation (from Reels to AR/VR videos)", "Content Writing"],
+        },
+        {
+          imgSrc: "./images/website-management.jpeg",
+          title: "marketing & management",
+          list: ["Social Media Management", "Ads Management"],
+        },
+        {
+          imgSrc: "./images/website-management.jpeg",
+          title: "event marketing, management & training solutions",
+          list: [
+            "Hackathons & Workshops (Complete end-to-end management)",
+            "College-level Inplant Trainings",
+          ],
+        },
+      ].map((service, index) => (
+        <div
+          key={index}
+          ref={(el) => (cardsRef.current[index] = el)}
+          className="services-card"
+        >
+          {/* Image Section */}
+          <img
+            className="services-image"
+            src={service.imgSrc}
+            alt={`${service.title} Image`}
+          />
+          {/* Text Section */}
+          <div className="services-text">
+            <h3 className="services-text-head">{service.title}</h3>
+            <ul className="services-text-para">
+              {service.list.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+            <button className="services-text-button">View Work</button>
+          </div>
+        </div>
+      ))}
+
+      {/* Who We Are Section */}
+      <div className="who-are-we">
+        <h2 className="who-are-we-head" ref={WhoWeAreRef}>who we are</h2>
+        <h4 className="who-are-we-subhead">
+          As a pioneering force in the digital galaxy, SDMS® blends creativity with
+          cutting-edge technology to craft your brand’s journey through the stars.
+        </h4>
+        <p className="who-are-we-tag">
+          We help your business launch into the digital cosmos, delivering powerful
+          websites and apps that leave a lasting impact. Our expertise in the latest
+          digital trends ensures your brand orbits success, expanding across the universe
+          of possibilities.
+        </p>
       </div>
 
-      <div className="services-card">
-        {/* Image Section */}
-        <img
-          ref={imageRef}
-          className="services-image"
-          src="./images/website-management.jpeg" // Replace with your image path
-          alt="Service Image"
-        />
-        {/* Text Section */}
-        <div ref={textRef} className="services-text">
-          <h3 className="services-text-head">marketing & management</h3>
-          <ul className="services-text-para">
-          <li>Social Media Management</li>
-            <li>Ads Management</li>
-          </ul>
-          <button className="services-text-button">View Work</button>
-        </div>
-       </div>
-     
-        <div className="services-card">
-        {/* Image Section */}
-        <img
-          ref={imageRef}
-          className="services-image"
-          src="./images/website-management.jpeg" // Replace with your image path
-          alt="Service Image"
-        />
-        {/* Text Section */}
-        <div ref={textRef} className="services-text">
-          <h3 className="services-text-head">event marketing, management & training solutions</h3>
-          <ul className="services-text-para">
-          <li>Hackathons & Workshops (Complete end-to-end management)</li>
-            <li>College-level Inplant Trainings</li>
-            <li></li>
-          </ul>
-          <button className="services-text-button">View Work</button>
-        </div>
-        </div>
-        <div className="who-are-we">
-          <h2 className="who-are-we-head">who we are</h2>
-          <h4 className="who-are-we-subhead">As a pioneering force in the digital galaxy, SDMS® blends creativity with cutting-edge technology to craft your brand’s journey through the stars.</h4>
-          <p className="who-are-we-tag">We help your business launch into the digital cosmos, delivering powerful websites and apps that leave a lasting impact. Our expertise in the latest digital trends ensures your brand orbits success, expanding across the universe of possibilities</p>
-      </div>
-      <Stats/>
+      {/* Stats Section */}
+      <Stats />
     </section>
-    
   );
 };
 
