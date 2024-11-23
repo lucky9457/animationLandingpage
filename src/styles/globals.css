@@ -728,8 +728,8 @@ body.dark-mode .contact-button{
   margin-bottom: 0.4rem;
   color: var(--background-dark);
   text-transform: lowercase; /* Adds a professional look */
-  letter-spacing: 0.1em; /* Improves readability */
   font-family:'Dirtyline36Daysoftype2022' ;
+  line-height: 0.8;
 }
 .dark-mode .who-are-we-head {
   color: var(--background-light);
@@ -774,7 +774,6 @@ body.dark-mode .contact-button{
   margin-bottom: 2rem;
   color: var(--background-dark);
   text-transform: lowercase; /* Adds a professional look */
-  letter-spacing: 0.1em; /* Improves readability */
   font-family:'Dirtyline36Daysoftype2022' ;
 }
 .dark-mode .services-heading {
@@ -929,8 +928,9 @@ body.dark-mode .contact-button{
 
   /* Heading */
   .services-heading {
-    font-size: 2rem; /* Reduce heading size for smaller screens */
+    font-size: 4rem; /* Reduce heading size for smaller screens */
     margin-bottom: 1.5rem; /* Adjust spacing below heading */
+    line-height: 0.8;
   }
 
   /* Text Head */
