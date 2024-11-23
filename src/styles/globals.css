@@ -730,6 +730,7 @@ body.dark-mode .contact-button{
   text-transform: lowercase; /* Adds a professional look */
   font-family:'Dirtyline36Daysoftype2022' ;
   line-height: 0.8;
+  margin : 3vh 0;
 }
 .dark-mode .who-are-we-head {
   color: var(--background-light);
@@ -1247,10 +1248,11 @@ body.dark-mode .contact-button{
 .footer-head {
   font-family: 'Dirtyline36Daysoftype2022';
   text-transform: lowercase;
-  font-size: 8rem;
+  font-size: 5rem;
   text-align: center;
   color:var(--background-dark);
   line-height: 0.75;
+  font-weight: bold;
 }
 .dark-mode .footer-head {
   color : var(--background-light);
@@ -1313,14 +1315,14 @@ body.dark-mode .contact-button{
   
   }
   .footer-head {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 
 /* Scrolling Text Component Styles */
 
 .scrolling-text-container {
-  height: 40vh;
+  height: 25vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1331,7 +1333,6 @@ body.dark-mode .contact-button{
 
 .dark-mode .scrolling-text-container {
   background-color: var(--background-dark);
-  color: var(--background-light);
 }
 
 .scrolling-text {
@@ -1341,6 +1342,7 @@ body.dark-mode .contact-button{
   white-space: nowrap;
   display: flex; /* Ensures proper alignment */
   align-items: center; /* Centers text vertically */
+  
 }
 
 .scroll-right,
@@ -1351,8 +1353,15 @@ body.dark-mode .contact-button{
   font-family: 'Dirtyline36Daysoftype2022', sans-serif;
   animation-timing-function: linear;
   animation-iteration-count: infinite; /* Ensures infinite scrolling */
+  color:#3F3F3F;
 }
 
+.dark-mode .scroll-right{
+  color: #EDEADE;
+}
+.dark-mode .scroll-left{
+  color: #EDEADE;
+}
 /* Right-scrolling text */
 .scroll-right {
   animation: scrollRight 1000s linear infinite;
@@ -1389,4 +1398,52 @@ body.dark-mode .contact-button{
 .scroll-left{
   font-size: 2rem;
 }
+}
+
+/* Stats Component styling */
+.stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 40px;
+  
+}
+
+/* Card styling */
+.stat-card {
+  width: 35vw;
+  height: 35vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-radius: 12px;
+  color:#1b1b1b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  
+ 
+}
+
+/* Top-left value */
+.stat-value {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: left;
+  font-family: 'poppins', sans-serif;
+ 
+}
+
+/* Bottom-right label */
+.stat-label {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: right;
+  font-family: 'poppins', sans-serif;
+}
+.dark-mode .stat-card{
+  
+  color: #fefefe;
 }

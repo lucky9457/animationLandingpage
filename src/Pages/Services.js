@@ -1,6 +1,7 @@
 "use client"; // for client-side animations with GSAP
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Stats from './Stats';
 import "../styles/globals.css";
 
 const Services = () => {
@@ -115,6 +116,7 @@ const Services = () => {
           <h4 className="who-are-we-subhead">As a pioneering force in the digital galaxy, SDMS® blends creativity with cutting-edge technology to craft your brand’s journey through the stars.</h4>
           <p className="who-are-we-tag">We help your business launch into the digital cosmos, delivering powerful websites and apps that leave a lasting impact. Our expertise in the latest digital trends ensures your brand orbits success, expanding across the universe of possibilities</p>
       </div>
+      <Stats/>
     </section>
     
   );

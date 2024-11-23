@@ -5,7 +5,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <footer className="footer-container">
-      <p className='footer-head'>join our <br/> jungle <br /> trek</p>
+      <p className='footer-head'>connect with us <br/> across the <br /> cosmos</p>
       <div className="social-media">
         <div className="social-row">
           <p className="social-heading">LinkedIn</p>
