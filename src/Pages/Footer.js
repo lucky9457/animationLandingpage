@@ -29,17 +29,8 @@ const Footer = () => {
             />
           </div>
         </div>
-        <hr className="divider" />
-        <div className="social-row">
-          <p className="social-heading">Twitter</p>
-          <div className="social-icon">
-            <img
-              src="./images/twitter.png" // Replace with your LinkedIn icon's path
-              alt="LinkedIn Icon"
-              className="icon"
-            />
-          </div>
-        </div>
+        
+   
         <hr className="divider" />
         <div className="social-row">
           <p className="social-heading">Facebook</p>

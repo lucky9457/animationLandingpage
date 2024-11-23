@@ -29,6 +29,7 @@ const Services = () => {
   return (
     <section className="services-container">
       <h2 className="services-heading">our services</h2>
+      <p className="our-services-tag">Like a constellation, our services align to create a universe of endless possibilities.</p>
       <div className="services-card">
          {/* Image Section */}
          <img
@@ -39,12 +40,13 @@ const Services = () => {
         />
         {/* Text Section */}
         <div ref={textRef} className="services-text">
-          <h3 className="services-text-head">digital marketing & branding</h3>
+          <h3 className="services-text-head">digital solutions & development</h3>
            <ul className="services-text-para">
-           <li>Complete content strategy</li>
-            <li>Marketing collaterals</li>
-            <li>Social Media Optimization (SMO)</li>
-            <li>Profile creation & management</li>
+           <li>Software as a Service (SaaS)</li>
+            <li>Automation / API Creation</li>
+            <li>Website / App Creation</li>
+            <li>POS Systems</li>
+            <li>UI/UX Design</li>
            </ul>
           <button className="services-text-button">View Work</button>
         </div>
@@ -61,16 +63,15 @@ const Services = () => {
         />
         {/* Text Section */}
         <div ref={textRef} className="services-text">
-          <h3 className="services-text-head">website creation & management</h3>
+          <h3 className="services-text-head">creative & content services</h3>
           <ul className="services-text-para">
-          <li>Customized website design</li>
-            <li>SEO-friendly content creation</li>
-            <li>Mobile optimization</li>
-            <li>Regular maintenance & updates</li>
+          <li>Video Creation (from Reels to AR/VR videos)</li>
+            <li>Content Writing</li>
           </ul>
           <button className="services-text-button">View Work</button>
         </div> 
       </div>
+
       <div className="services-card">
         {/* Image Section */}
         <img
@@ -81,19 +82,41 @@ const Services = () => {
         />
         {/* Text Section */}
         <div ref={textRef} className="services-text">
-          <h3 className="services-text-head">social media management</h3>
+          <h3 className="services-text-head">marketing & management</h3>
           <ul className="services-text-para">
-          <li>Profile setup & meta ads</li>
-            <li>Post content (10-15 per month)</li>
-            <li>Commenting strategy</li>
-            <li>Hashtag & trend optimization</li>
+          <li>Social Media Management</li>
+            <li>Ads Management</li>
           </ul>
           <button className="services-text-button">View Work</button>
         </div>
-
-        
+       </div>
+     
+        <div className="services-card">
+        {/* Image Section */}
+        <img
+          ref={imageRef}
+          className="services-image"
+          src="./images/website-management.jpeg" // Replace with your image path
+          alt="Service Image"
+        />
+        {/* Text Section */}
+        <div ref={textRef} className="services-text">
+          <h3 className="services-text-head">event marketing, management & training solutions</h3>
+          <ul className="services-text-para">
+          <li>Hackathons & Workshops (Complete end-to-end management)</li>
+            <li>College-level Inplant Trainings</li>
+            <li></li>
+          </ul>
+          <button className="services-text-button">View Work</button>
+        </div>
+        </div>
+        <div className="who-are-we">
+          <h2 className="who-are-we-head">who we are</h2>
+          <h4 className="who-are-we-subhead">As a pioneering force in the digital galaxy, SDMS® blends creativity with cutting-edge technology to craft your brand’s journey through the stars.</h4>
+          <p className="who-are-we-tag">We help your business launch into the digital cosmos, delivering powerful websites and apps that leave a lasting impact. Our expertise in the latest digital trends ensures your brand orbits success, expanding across the universe of possibilities</p>
       </div>
     </section>
+    
   );
 };
 

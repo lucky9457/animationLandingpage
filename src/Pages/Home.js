@@ -50,13 +50,10 @@ export default function Home() {
 
           <main>
             <h2 className="home-heading">
-              roar in the <br />
-              digital wilderness.
+            lets orbiting  success<br/> in the <br/>digital universe
             </h2>
             <p className="home-desc">
-              WE ROAR WITH SUCCESS DELIVERING THE <span className="company-name">SABEENA DIGITAL MEDIA SERVICES</span> <br />
-              THROUGH VERSATILE AND BRANDING AND THE LATEST <br />
-              TECH DEVELOPMENT TO COMPANIES.
+            Launch your brand into the digital cosmos with powerful software, dynamic video creations <br/> and stellar web and app solutions. We guide your business to new galaxies of growth and success.
             </p>
             <div className="down-arrow" onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}>
               <FaRegArrowAltCircleDown />
