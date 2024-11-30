@@ -53,7 +53,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="contactSection">
+    <div className="contactSection" id = "contact">
       <div className="innerWidth">
         <p className="contact-head">get in touch with us!</p>
         <form onSubmit={handleSubmit}>

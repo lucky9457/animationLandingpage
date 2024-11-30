@@ -4,6 +4,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Stats from "./Stats";
 import "../styles/globals.css";
+import Link from 'next/Link'
 
 const Services = () => {
   const headingRef = useRef(null);
@@ -69,7 +70,21 @@ const Services = () => {
   }, []);
 
   return (
-    <section className="services-container">
+    <section className="services-container" id = "our-services">
+      {/* Who We Are Section */}
+      <div className="who-are-we" id = "WhoWeAre">
+        <h2 className="who-are-we-head" ref={WhoWeAreRef}>who <br/> we are</h2>
+        <h4 className="who-are-we-subhead">
+          As a pioneering force in the digital galaxy, SDMS® blends creativity with
+          cutting-edge technology to craft your brand’s journey through the stars.
+        </h4>
+        <p className="who-are-we-tag">
+          We help your business launch into the digital cosmos, delivering powerful
+          websites and apps that leave a lasting impact. Our expertise in the latest
+          digital trends ensures your brand orbits success, expanding across the universe
+          of possibilities.
+        </p>
+      </div>
       {/* Heading */}
       <h2 ref={headingRef} className="services-heading">
         our services
@@ -85,11 +100,7 @@ const Services = () => {
           imgSrc: "./images/Digital-Marketing.jpg",
           title: "digital solutions & development",
           list: [
-            "Software as a Service (SaaS)",
-            "Automation / API Creation",
-            "Website / App Creation",
-            "POS Systems",
-            "UI/UX Design",
+            "Our Development Services offer end-to-end solutions, including SaaS development, Automation & API integration, and Website/App Creation for seamless user experiences. We specialize in building robust POS systems and intuitive UI/UX-designs that enhance business operations and customer satisfaction. Let us bring your digital ideas to life with innovative and tailored solutions."
           ],
         },
         {
@@ -130,25 +141,12 @@ const Services = () => {
                 <li key={idx}>{item}</li>
               ))}
             </ul>
-            <button className="services-text-button">More Info</button>
+            <Link href = '/ServicesPage' ><button className="services-text-button" >More Info</button></Link>
           </div>
         </div>
       ))}
 
-      {/* Who We Are Section */}
-      <div className="who-are-we">
-        <h2 className="who-are-we-head" ref={WhoWeAreRef}>who <br/> we are</h2>
-        <h4 className="who-are-we-subhead">
-          As a pioneering force in the digital galaxy, SDMS® blends creativity with
-          cutting-edge technology to craft your brand’s journey through the stars.
-        </h4>
-        <p className="who-are-we-tag">
-          We help your business launch into the digital cosmos, delivering powerful
-          websites and apps that leave a lasting impact. Our expertise in the latest
-          digital trends ensures your brand orbits success, expanding across the universe
-          of possibilities.
-        </p>
-      </div>
+      
 
       {/* Stats Section */}
       <Stats />

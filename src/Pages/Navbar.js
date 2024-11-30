@@ -9,6 +9,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 export default function Navbar({
   darkMode,
@@ -16,6 +17,14 @@ export default function Navbar({
   toggleMenu,
   menuOpen,
 }) {
+  
+  const handleScroll = (id) => {
+    const section = document.querySelector(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+    toggleMenu();
+  };
   return (
     <nav className="navbar menu-container">
       {/* Logo */}
@@ -73,10 +82,10 @@ export default function Navbar({
             <div className="menu-content">
               <ul className="nav-links">
                 <li>home</li>
-                <li>services</li>
-                <li>our works</li>
-                <li>testimonials</li>
-                <li>contact</li>
+                <li onClick={() => handleScroll("#our-services")}>our services</li>
+              <Link href = "/Trainings" className="navitem"> Trainings & Internships</Link> 
+                <li onClick={() => handleScroll("#testimonials")}>testimonials</li>
+                <li onClick={() => handleScroll("#contact")}>contact</li>
               </ul>
               </div>
               <div className="contact-info">

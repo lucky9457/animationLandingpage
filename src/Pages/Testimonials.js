@@ -36,7 +36,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div className="testimonials-container">
+    <div className="testimonials-container" id = "testimonials">
       <h2 className="testimonials-heading">partner's<br/>testimony</h2>
       <motion.div className="testimonials-wrapper" drag="x" dragConstraints={{ left: -1500, right: 0 }}>
         {testimonials.map((testimonial, index) => (
