@@ -4,7 +4,13 @@ import { useState } from "react";
 import "../styles/globals.css";
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    mobile: "",
+    message: "",
+    service: "",
+  });
   const [errors, setErrors] = useState({});
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -23,6 +29,12 @@ export default function Contact() {
     ) {
       newErrors.email = "Invalid email format.";
     }
+    if (!formData.mobile) {
+      newErrors.mobile = "Mobile number is required.";
+    } else if (!/^\d{10}$/.test(formData.mobile)) {
+      newErrors.mobile = "Invalid mobile number. Must be 10 digits.";
+    }
+    if (!formData.service) newErrors.service = "Please select a service.";
     if (!formData.message) newErrors.message = "Message is required.";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -43,7 +55,7 @@ export default function Contact() {
 
       if (response.ok) {
         setSuccessMessage("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", mobile: "", message: "", service: "" });
       } else {
         setSuccessMessage("Failed to send message. Please try again.");
       }
@@ -53,10 +65,11 @@ export default function Contact() {
   };
 
   return (
-    <div className="contactSection" id = "contact">
+    <div className="contactSection" id="contact">
       <div className="innerWidth">
         <p className="contact-head">get in touch with us!</p>
         <form onSubmit={handleSubmit}>
+          {/* Name Field */}
           <input
             type="text"
             name="name"
@@ -65,7 +78,8 @@ export default function Contact() {
             value={formData.name}
             onChange={handleChange}
           />
-          
+
+          {/* Email Field */}
           <input
             type="email"
             name="email"
@@ -74,7 +88,32 @@ export default function Contact() {
             value={formData.email}
             onChange={handleChange}
           />
-          
+
+          {/* Mobile Number Field */}
+          <input
+            type="text"
+            name="mobile"
+            className="mobile"
+            placeholder="Your Mobile Number"
+            value={formData.mobile}
+            onChange={handleChange}
+          />
+
+          {/* Dropdown for Services */}
+          <select
+            name="service"
+            className="service"
+            value={formData.service}
+            onChange={handleChange}
+          >
+            <option value="">Select a Service</option>
+            <option value="Digital Solutions & Development">Digital Solutions & Development</option>
+            <option value="Creative Content and Services">Creative Content and Services</option>
+            <option value="Marketing and Management">Marketing and Management</option>
+            <option value="Event Marketing and Training Solutions">Event Marketing and Training Solutions</option>
+          </select>
+
+          {/* Message Field */}
           <textarea
             rows="1"
             name="message"
@@ -83,15 +122,22 @@ export default function Contact() {
             value={formData.message}
             onChange={handleChange}
           />
-           {errors.name && <p className="error">{errors.name}</p>}
-           {errors.email && <p className="error">{errors.email}</p>}
+
+          {/* Error Messages */}
+          {errors.name && <p className="error">{errors.name}</p>}
+          {errors.email && <p className="error">{errors.email}</p>}
+          {errors.mobile && <p className="error">{errors.mobile}</p>}
+          {errors.service && <p className="error">{errors.service}</p>}
           {errors.message && <p className="error">{errors.message}</p>}
+
+          {/* Submit Button */}
           <button className="contactButton" type="submit">
             Get in touch
           </button>
         </form>
+
+        {/* Success Message */}
         {successMessage && <p className="success">{successMessage}</p>}
-       
       </div>
     </div>
   );

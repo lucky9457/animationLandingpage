@@ -874,6 +874,7 @@ body.dark-mode .contact-button{
   overflow: hidden;
   transition: transform 0.3s ease-in-out, background-color 0.3s ease;
   margin-top:10vh;
+  margin-bottom: 5vh;
 }
 @media (min-width: 600px) {
 .services-card:nth-child(4)  {
@@ -1325,6 +1326,51 @@ body.dark-mode .contact-button{
   transform: scale(1.1);
   transition: transition 0.3 ease;
 }
+/* Mobile input field */
+.mobile {
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  padding: 10px 6px;
+  font-size: 14px;
+  margin-bottom: 40px;
+  color: var(--background-dark);
+  width: 100%;
+}
+
+/* Dropdown for service selection */
+.service {
+  background: none;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  padding: 10px 6px;
+  font-size: 14px;
+  margin-bottom: 40px;
+  color: var(--background-dark);
+  width: 100%;
+  appearance: none; /* Hides default dropdown arrow */
+  cursor: pointer;
+}
+
+/* Dark mode for mobile and service fields */
+.dark-mode .mobile,
+.dark-mode .service {
+  color: var(--background-light);
+}
+
+/* For mobile responsiveness */
+@media screen and (max-width: 600px) {
+  .mobile,
+  .service {
+    width: 100%;
+  }
+}
+
+
 
 /* Toggle button */
 .themeToggle {

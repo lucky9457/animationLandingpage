@@ -98,7 +98,7 @@ const Services = () => {
       {[
         {
           imgSrc: "./images/Digital-Marketing.jpg",
-          title: "digital solutions & development",
+          title: "development",
           list: [
             " Software as a Service (SaaS)",
             "Automation / API Creation",
@@ -109,22 +109,10 @@ const Services = () => {
         },
         {
           imgSrc: "./images/socialmedia-management.jpeg",
-          title: "creative & content services",
+          title: "marketing & branding",
           list: ["Video Creation (from Reels to AR/VR videos)", "Content Writing"],
         },
-        {
-          imgSrc: "./images/website-management.jpeg",
-          title: "marketing & management",
-          list: ["Social Media Management", "Ads Management"],
-        },
-        {
-          imgSrc: "./images/website-management.jpeg",
-          title: "event marketing, management & training solutions",
-          list: [
-            "Hackathons & Workshops (Complete end-to-end management)",
-            "College-level Inplant Trainings",
-          ],
-        },
+        
       ].map((service, index) => (
         <div
           key={index}
