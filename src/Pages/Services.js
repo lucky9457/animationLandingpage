@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Stats from "./Stats";
 import "../styles/globals.css";
-import Link from 'next/Link'
+import Link from 'next/link'
 
 const Services = () => {
   const headingRef = useRef(null);
@@ -100,7 +100,11 @@ const Services = () => {
           imgSrc: "./images/Digital-Marketing.jpg",
           title: "digital solutions & development",
           list: [
-            "Our Development Services offer end-to-end solutions, including SaaS development, Automation & API integration, and Website/App Creation for seamless user experiences. We specialize in building robust POS systems and intuitive UI/UX-designs that enhance business operations and customer satisfaction. Let us bring your digital ideas to life with innovative and tailored solutions."
+            " Software as a Service (SaaS)",
+            "Automation / API Creation",
+            "Website / App Creation ",
+            "POS Systems",
+            "UI/UX Design"
           ],
         },
         {

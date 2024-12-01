@@ -116,7 +116,7 @@ export default function Trainings() {
     </div>
 
     {/* Website Section */}
-    <div className="contact-item">
+    <div className="contact-item web">
       <small>Website</small>
       <p>sabeenadigitalmediaservices.com</p>
     </div>

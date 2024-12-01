@@ -249,12 +249,23 @@ a {
 .dark-mode .home-heading {
   color: var(--highlight-color); /* Highlight color for dark mode */
 }
-
+/* Paragraph Styling */
+.home-desc {
+  font-size: 1rem; /* Minimal font size for readability */
+  font-family: 'Syne', serif;
+  margin: 10px 20px;
+  line-height: 1.5;
+  color: #000; /* Default color for light mode */
+  text-align: center;
+}
 /* Responsive Heading Size */
 @media (max-width: 768px) {
   .home-heading {
-    font-size: 2.3rem;
+    font-size: 3rem;
     margin-top:15vh;
+  }
+  .home-desc{
+    font-size: 0.8rem;
   }
 }
 
@@ -544,7 +555,7 @@ a, p {
  }
 
 @media (max-width : 600px) {
-  .nav-links {
+  .nav-links , .navitem {
     font-size: 3rem;
   }
   .contact-info{
@@ -665,15 +676,7 @@ a, p {
   text-align: center;
 }
 
-/* Paragraph Styling */
-.home-desc {
-  font-size: 1rem; /* Minimal font size for readability */
-  font-family: 'Syne', serif;
-  margin: 10px 20px;
-  line-height: 1.5;
-  color: #000; /* Default color for light mode */
-  text-align: center;
-}
+
 
 /* Company Name Styling */
 .company-name {
@@ -1435,7 +1438,7 @@ body.dark-mode .contact-button{
 /* Mobile view styles */
 @media (max-width: 600px) {
   .social-heading {
-    font-size: 4rem;
+    font-size: 2rem;
   }
   .social-icon .icon {
     width: 30px;
@@ -1585,6 +1588,12 @@ body.dark-mode .contact-button{
     width: 100%;
     height: 25vh;
   }
+  .stat-value{
+    font-size: 2rem;
+  }
+  .stat-label{
+    font-size: 1rem;
+  }
 }
 
 /* Desktop adjustments to move right cards lower */
@@ -1681,6 +1690,19 @@ body.dark-mode .contact-button{
   color:var(--background-light)
 }
 
+@media(max-width:764px){
+  .service-page-head {
+    font-size:1.3rem;
+  }
+  .service-page-text{
+    font-size: 1rem;
+    width:100%;
+  }
+  .content-container{
+    margin-top:20vh;
+}
+}
+
 /* Additional Containers */
 .services-extra-container {
   background-color: var(--background-light);
@@ -1759,6 +1781,22 @@ body.dark-mode .contact-button{
     flex-direction: column;
     gap: 1.5rem;
   }
+  .services-extra-content{
+    display: block;
+  }
+  .extra-heading{
+    font-size: 3.5rem;
+  }
+  .extra-text-para{
+    width:100%;
+  }
+ 
+   
+  .service-options-p{
+    width:100%;
+    text-align: center;
+  }
+  
 }
 .our-expertise-head{
   font-family: 'Syne',serif;
@@ -1768,7 +1806,7 @@ body.dark-mode .contact-button{
 
 }
 /* Wrapper for the scrolling container */
-cardScrollerWrapper {
+.cardScrollerWrapper {
   width: 100%;
   overflow: hidden;
   position: relative;
@@ -1868,6 +1906,18 @@ cardScrollerWrapper {
   }
 }
 
+@media(max-width:764px){
+  .our-expertise-head{
+    font-size: 4rem;
+  }
+  .cardScroller .card{
+    height:25vh;
+  }
+  .cardScroller2 .card{
+    height:25vh;
+  }
+}
+
 .our-process-heading {
   font-family: 'Dirtyline36Daysoftype2022';
   font-size: 6rem;
@@ -1911,6 +1961,55 @@ cardScrollerWrapper {
 .dark-mode .cardDescription{
   color:var(--background-light);
 } 
+
+/* The main scrolling container */
+.cardScroller3 {
+  display: flex;
+  animation: scroll-cards 20s linear infinite;
+  margin-bottom: 2vh;
+}
+.cardScroller3 .card {
+  min-width: 40vw;  /* Adjust based on your design */
+  height: 50vh;     /* Adjust based on your design */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0;  /* No space between cards */
+  border: 1px solid #000000;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+@media(max-width:764px){
+  .our-process-heading{
+    font-size: 4rem;
+  }
+  .our-process-text{
+    font-size: 1.2rem;
+    }
+   
+    .cardScroller3 .card {
+      width:70vw;
+    }
+  .sequenceNumber{
+    font-size: 1rem;
+    display: none;
+  }
+  .cardHeading{
+    font-size: 1rem;
+    margin-top: -1vh;
+    text-align: center;
+  }
+  .cardDescription{
+    text-transform: none;
+    font-size: 0.7rem;
+    text-align: center;
+  }
+}
+
+
+
+
 .time-to-roar-head{
   font-family:'Dirtyline36Daysoftype2022';
   font-size: 6.5rem;
@@ -1971,6 +2070,25 @@ cardScrollerWrapper {
   color:var(--background-light);
 }
 
+@media(max-width:764px){
+  .time-to-roar-head{
+    font-size: 4rem;
+  }
+  .contact-item small{
+    font-size: 0.5rem;
+  }
+  .contact-item p{
+    font-size: 0.6rem;
+  }
+  .web{
+    display: none;
+  }
+
+}
+
+
+
+
 .main-container {
   display: flex;
   flex-direction: column;
@@ -1987,9 +2105,7 @@ cardScrollerWrapper {
   gap: 20px;
 }
 
-.sub-container.reverse {
-  flex-direction: column-reverse; /* Reverse content order by default */
-}
+ 
 
 /* Large Devices Layout */
 @media (min-width: 768px) {
@@ -2006,6 +2122,7 @@ cardScrollerWrapper {
 .text-content {
   flex: 1;
   text-align: left;
+   
 }
 
  
@@ -2024,15 +2141,10 @@ cardScrollerWrapper {
   border-radius: 4px;
   cursor: pointer;
 }
-
-.btn-primary {
-  background-color: #007bff;
-  color: #fff;
-}
-
-.btn-secondary {
-  background-color: #6c757d;
-  color: #fff;
+@media(max-width:764px){
+    .text-content{
+      text-align: center;
+    }
 }
 
 .image-content img {

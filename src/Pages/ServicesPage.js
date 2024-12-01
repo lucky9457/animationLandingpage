@@ -161,7 +161,7 @@ export default function ServicesPage() {
 
         <p className="our-process-heading">our <br/> process</p>
         <p className="our-process-text"> These Pillars Support excellence <br /> in the digital jungle.</p>
-        <div className="cardScroller">
+        <div className="cardScroller3">
         {/* Dynamically rendering the cards */}
         {[
           {
