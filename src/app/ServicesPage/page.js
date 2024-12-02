@@ -1,7 +1,7 @@
 "use client";
 import Head from "next/head";
 import Navbar from "../Navbar";
-import "../styles/globals.css";
+import "../../styles/globals.css";
 import { useState, useEffect } from "react";
 
 export default function ServicesPage() {
