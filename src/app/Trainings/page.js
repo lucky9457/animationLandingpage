@@ -1,7 +1,8 @@
+"use client";
 import Head from "next/head";
-import Navbar from "./Navbar";
-import "../styles/globals.css";
-import { useState, useEffect } from "react";
+import Navbar from "../Navbar";
+import "../../styles/globals.css";
+import { useState} from "react";
 
 
 export default function Trainings() {
