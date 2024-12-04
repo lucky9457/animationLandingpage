@@ -77,62 +77,97 @@ a {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #000; /* Black background for a premium look */
+  background-color: #000; /* Black background */
   overflow: hidden;
 }
 
-/* Logo styles with animation */
-.logo {
-  width: 150px; /* Adjust size as needed */
-  opacity: 0;
-  transform: translateX(-50%);
-  animation: slide-in 2s cubic-bezier(0.25, 1, 0.5, 1) forwards, sparkle 3s infinite ease-in-out;
+/* Video styles */
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
-/* Glow text animation */
+/* Logo and title container */
+#logo-and-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* Logo styles with zoom-in effect */
+.logo {
+  width: 150px;
+  opacity: 0;
+  animation: fade-in 2s ease forwards, zoom-in 2s ease forwards;
+}
+
+/* Glow text styles with zoom-in */
 .glow-text {
-  margin-top: 20px;
+  margin-top: 35vh;
   font-size: 1.8rem;
-  color: #ffffff;
-  font-family: 'Poppins', sans-serif;
+  color: #ffffff; /* Golden color */
+  font-family: 'Dirtyline36Daysoftype2022', sans-serif;
   text-align: center;
   opacity: 0;
-  transform: translateX(-50%);
-  animation: slide-in 2.5s cubic-bezier(0.25, 1, 0.5, 1) forwards, glow-effect 1.5s infinite ease-in-out 2s;
+  text-transform: lowercase;
+  animation: fade-in 2.5s ease forwards 0.5s, zoom-in 2s ease forwards 0.5s, glow-effect 2s infinite ease-in-out 3s;
 }
 
-/* Keyframes for sliding in from the left */
-@keyframes slide-in {
+/* Glow effect keyframes */
+@keyframes glow-effect {
+  0%, 100% {
+    text-shadow: 0 0 5px #ffd700, 0 0 10px #ffd700, 0 0 15px #ffae00, 0 0 20px #ffae00, 0 0 25px #ffc700, 0 0 30px #ffc700;
+  }
+  50% {
+    text-shadow: 0 0 10px #ffae00, 0 0 20px #ffd700, 0 0 30px #ffd700, 0 0 40px #ffc700, 0 0 50px #ffd700, 0 0 60px #ffd700;
+  }
+}
+
+/* Fade-in keyframes */
+@keyframes fade-in {
   0% {
-    transform: translateX(-100%);
     opacity: 0;
   }
   100% {
-    transform: translateX(0);
     opacity: 1;
   }
 }
 
-/* Sparkle effect keyframes */
-@keyframes sparkle {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
+/* Zoom-in keyframes */
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.8);
   }
-  50% {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+  100% {
+    transform: scale(1);
   }
 }
 
-/* Glow effect for text */
-@keyframes glow-effect {
+
+/* Keyframes for fade-in effect */
+@keyframes fade-in {
   0% {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
-  }
-  50% {
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.4);
+    opacity: 0;
   }
   100% {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
+    opacity: 1;
+  }
+}
+
+/* Keyframes for zoom-in effect */
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
@@ -2067,8 +2102,9 @@ body.dark-mode .contact-button{
   }
   .cardDescription{
     text-transform: none;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     text-align: center;
+    margin-top: -3vh;
   }
   .cardScroller3 .card{
     height: 30vh;

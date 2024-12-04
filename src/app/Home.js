@@ -13,7 +13,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 5000); // Show the loading screen for 5 seconds (video duration)
     return () => clearTimeout(timer);
   }, []);
 
@@ -36,9 +36,22 @@ export default function Home() {
 
       {loading ? (
         <div className="loading-screen">
-          <img src="./images/logo.jpeg" alt="Logo" className="logo" />
-          <h1 className="glow-text">Sabeena Digital Media Services</h1>
-        </div>
+         <video
+            id="intro-video"
+            className="video"
+            autoPlay
+            muted
+            playsInline
+            onEnded={() => setLoading(false)}
+          >
+            <source src="./images/intro.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <div id="logo-and-title" className="fade-in">
+         {/*  <img src="./images/logo.jpeg" alt="Logo" className="logo zoom-in" /> */}
+            <h1 className="glow-text zoom-in">Sabeena Digital Media Services</h1>
+          </div>
+      </div>
       ) : (
         <div className={`home ${darkMode ? "dark" : ""}`} id = "home">
           <Navbar
