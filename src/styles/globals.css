@@ -850,6 +850,7 @@ body.dark-mode .contact-button{
   color: var(--background-dark);
   text-transform: lowercase; /* Adds a professional look */
   font-family:'Dirtyline36Daysoftype2022' ;
+  font-weight: 100;
 }
 .dark-mode .services-heading {
   color: var(--background-light);
@@ -1064,6 +1065,7 @@ body.dark-mode .contact-button{
   margin-bottom: 30px; /* Spacing below the heading */
   font-family: 'Dirtyline36Daysoftype2022'; 
   line-height: 4rem;
+  font-weight: 100;
 }
 
 /* Dark mode heading */
@@ -1386,7 +1388,7 @@ body.dark-mode .contact-button{
   padding : 5vh 0;
   color : #232b2b;
   letter-spacing: 0.8;
-  font-weight: bold;
+  font-weight: 100;
   line-height: 0.8;
 }
 @media screen and (max-width: 764px) {
@@ -1425,7 +1427,7 @@ body.dark-mode .contact-button{
   text-align: center;
   color:var(--background-dark);
   line-height: 0.8;
-  font-weight: bold;
+  font-weight: 100;
 }
 .dark-mode .footer-head {
   color : var(--background-light);
@@ -1638,7 +1640,7 @@ body.dark-mode .contact-button{
   .stat-label{
     margin-top: 3vh;
     margin-left: 3vw;
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
   .stat-card {
     width: 100%;
@@ -1752,7 +1754,7 @@ body.dark-mode .contact-button{
 .services-extra-container {
   background-color: var(--background-light);
   color: var(--background-dark);
-  padding: 5vh 10vw;
+  padding: 5vh 5vw;
   margin: 5vh 0;
   /* Adding box shadow */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
@@ -1781,6 +1783,7 @@ body.dark-mode .contact-button{
   font-family: "Dirtyline36Daysoftype2022", sans-serif;
   margin-bottom: 2vh;
   width: 50%;
+  font-weight: 100;
 }
 
 .extra-text,
@@ -1831,6 +1834,8 @@ body.dark-mode .contact-button{
   .service-options {
     flex-direction: column;
     gap: 1.5rem;
+    align-items: center;
+    margin-right: auto;
   }
 
   .services-extra-content {
@@ -1949,6 +1954,7 @@ body.dark-mode .contact-button{
   object-fit: contain;
 }
 
+
 /* Animating the reverse scroll */
 @keyframes scroll-cards-reverse {
   0% {
@@ -1958,16 +1964,18 @@ body.dark-mode .contact-button{
     transform: translateX(0); /* End at the beginning */
   }
 }
+ 
+
 
 @media(max-width:764px){
   .our-expertise-head{
     font-size: 4rem;
   }
   .cardScroller .card{
-    height:25vh;
+    height:20vh;
   }
   .cardScroller2 .card{
-    height:25vh;
+    height:20vh;
   }
 }
 
@@ -1977,7 +1985,7 @@ body.dark-mode .contact-button{
   text-align: center;
   text-transform: lowercase;
   line-height: 0.8;
-  font-weight: bold;
+  font-weight: 100;
   margin-top:10vh;
 }
 .dark-mode .our-process-heading {
@@ -2062,6 +2070,9 @@ body.dark-mode .contact-button{
     font-size: 0.7rem;
     text-align: center;
   }
+  .cardScroller3 .card{
+    height: 30vh;
+  }
 }
 
 
@@ -2074,7 +2085,7 @@ body.dark-mode .contact-button{
   text-transform: lowercase;
   margin-left: 10vw;
   margin-top: 10vh;
-  line-height: 58pt;
+  line-height: 5rem;
 }
 .dark-mode .time-to-roar-head{
   color:var(--background-light);
@@ -2085,6 +2096,7 @@ body.dark-mode .contact-button{
   width:80vw;
   margin-left: 10vw;
   margin-bottom: 20vh;
+  
 }
 
 .horizontal-line {
@@ -2131,6 +2143,8 @@ body.dark-mode .contact-button{
 @media(max-width:764px){
   .time-to-roar-head{
     font-size: 4rem;
+    line-height: 3rem;
+
   }
   .contact-item small{
     font-size: 0.5rem;
@@ -2214,6 +2228,8 @@ body.dark-mode .contact-button{
 .text-content-head{
   font-family: 'Dirtyline36Daysoftype2022';
   font-size: 3rem;
+  font-weight: 100;
+  line-height: 3rem;
 }
 .text-content-para{
   font-family: 'Syne',serif;
