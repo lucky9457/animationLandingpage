@@ -1784,33 +1784,35 @@ body.dark-mode .contact-button{
     margin-top:20vh;
 }
 }
-
-/* Additional Containers */
 .services-extra-container {
   background-color: var(--background-light);
   color: var(--background-dark);
   padding: 5vh 5vw;
-  margin: 5vh 0;
-  /* Adding box shadow */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
+  margin: 5vh 3vw;
+  border: 2px solid rgba(0, 0, 0, 0.1); /* Adding subtle border */
+  border-radius: 12px; /* Rounded corners for a modern look */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 
+              0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for elevation */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition on hover */
+}
+
+.services-extra-container:hover {
+  transform: translateY(-5px); /* Slight elevation on hover */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 
+              0 6px 12px rgba(0, 0, 0, 0.2); /* More pronounced shadow on hover */
 }
 
 .services-extra-content {
   margin-bottom: 4vh;
   display: flex;
 }
+
 .dark-mode .services-extra-container {
   background-color: var(--background-dark);
   color: var(--background-light);
-  /* Adding box shadow in dark mode */
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Lighter shadow for dark mode */
-}
-
-.dark-mode .extra-text {
-  color: var(--background-light);
-}
-.dark-mode .extra-text-para {
-  color: var(--background-light);
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Subtle border for dark mode */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2), 
+              0 4px 8px rgba(255, 255, 255, 0.1); /* Light shadow for dark mode */
 }
 
 .extra-heading {
@@ -1829,12 +1831,20 @@ body.dark-mode .contact-button{
   margin-left: auto;
   width: 100%;
 }
+
 .extra-text-para {
   width: 66%;
   margin-bottom: 10px;
   font-weight: bold;
 }
+.dark-mode .extra-text-para{
+  color:var(--background-light);
+}
+.dark-mode .extra-text{
 
+    color:var(--background-light);
+
+}
 .service-options {
   display: flex;
   justify-content: space-between;
@@ -1851,6 +1861,7 @@ body.dark-mode .contact-button{
   font-size: 1.2rem;
   text-transform: none;
 }
+
 .dark-mode .service-options-p {
   color: var(--background-light);
 }
@@ -2021,7 +2032,7 @@ body.dark-mode .contact-button{
   text-transform: lowercase;
   line-height: 0.8;
   font-weight: 100;
-  margin-top:10vh;
+  margin-top:15vh;
 }
 .dark-mode .our-process-heading {
   color:var(--background-light);
@@ -2032,6 +2043,7 @@ body.dark-mode .contact-button{
   text-transform: none;
   text-align: center;
   margin: 30px 0px;
+  margin-bottom: 15vh;
 }
 .dark-mode .our-process-text {
   color:var(--background-light);
