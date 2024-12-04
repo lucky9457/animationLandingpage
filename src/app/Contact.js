@@ -67,7 +67,7 @@ export default function Contact() {
   return (
     <div className="contactSection" id="contact">
       <div className="innerWidth">
-        <p className="contact-head">get in touch with us!</p>
+        <p className="contact-head">let's connect!</p>
         <form onSubmit={handleSubmit}>
           {/* Name Field */}
           <input
@@ -105,6 +105,7 @@ export default function Contact() {
             className="service"
             value={formData.service}
             onChange={handleChange}
+            type ="dropdown"
           >
             <option value="">Select a Service</option>
             <option value="Digital Solutions & Development">Digital Solutions & Development</option>
@@ -131,7 +132,7 @@ export default function Contact() {
           {errors.message && <p className="error">{errors.message}</p>}
 
           {/* Submit Button */}
-          <button className="contactButton" type="submit">
+          <button className="contact-button" type="submit">
             Get in touch
           </button>
         </form>

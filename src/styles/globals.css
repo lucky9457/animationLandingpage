@@ -39,6 +39,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Charrington';
+  src: url('/fonts/Charbold.ttf') format('truetype');
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
 html,
 body {
   max-width: 100vw;
@@ -259,7 +266,7 @@ a {
   text-align: center;
 }
 /* Responsive Heading Size */
-@media (max-width: 768px) {
+@media (max-width: 764px) {
   .home-heading {
     font-size: 3rem;
     margin-top:15vh;
@@ -387,7 +394,7 @@ a, p {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 900px) {
+@media (max-width: 764px) {
   .menu-link-item-holder a {
       font-size: 1.5em;
   }
@@ -401,7 +408,7 @@ a, p {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 764px) {
   .menu-link-item-holder a {
       font-size: 1.2em;
   }
@@ -489,6 +496,7 @@ a, p {
   font-family: 'Dirtyline36Daysoftype2022';
   color : var(--background-dark);
   text-transform: lowercase;
+  width:80vw;
 }
 .dark-mode .navitem {
   color:var(--background-light);
@@ -512,11 +520,11 @@ a, p {
   transition: transform 0.3s ease;
 }
 .dark-mode .navlinks {
-  color:var(--background-light)
+  color:var(--background-light);
 }
 .dark-mode .website-url,
 .phone-number {
-  color:var(--background-light)
+  color:var(--background-light);
 }
 
 .contact-info {
@@ -589,7 +597,7 @@ a, p {
   padding: 10px;
   background: transparent; /* Transparent background */
 }
-@media (max-width:567px){
+@media (max-width:764px){
   .premium-logo{
     padding:0px;
     margin-left:-20px;
@@ -724,19 +732,19 @@ body.dark-mode .down-arrow {
   background: transparent;
   color: #000000;
   padding: 10px 20px;
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-family:  'Syne',serif;
   border-radius: 33px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   padding : 15px;
 }
-@media (max-width:600px) {
+@media (max-width:764px) {
   .button-row {
     gap:20vw;
   }
   .explore-button, .contact-button {
-    font-size:0.7rem;
+    font-size:1rem;
   }
 }
 
@@ -785,13 +793,14 @@ body.dark-mode .contact-button{
 }
 .who-are-we-head {
   font-size: 8rem; /* Slightly larger font for emphasis */
-  font-weight: bold;
   margin-bottom: 0.4rem;
   color: var(--background-dark);
   text-transform: lowercase; /* Adds a professional look */
   font-family:'Dirtyline36Daysoftype2022' ;
   line-height: 0.8;
   margin-top : 8vh;
+  font-weight: 100;
+  letter-spacing: -3pt;
 }
 .dark-mode .who-are-we-head {
   color: var(--background-light);
@@ -825,6 +834,7 @@ body.dark-mode .contact-button{
   .who-are-we-head {
      font-size: 4rem;
      margin-top: 5vh;
+     letter-spacing: 1pt;
   }
 }
 .dark-mode .who-are-we-subhead{
@@ -836,7 +846,7 @@ body.dark-mode .contact-button{
 /* Heading */
 .services-heading {
   font-size: 5rem; /* Slightly larger font for emphasis */
-  font-weight: bold;
+  line-height:4rem;
   color: var(--background-dark);
   text-transform: lowercase; /* Adds a professional look */
   font-family:'Dirtyline36Daysoftype2022' ;
@@ -876,7 +886,7 @@ body.dark-mode .contact-button{
   margin-top:10vh;
   margin-bottom: 5vh;
 }
-@media (min-width: 600px) {
+@media (min-width: 764px) {
 .services-card:nth-child(4)  {
   flex-direction: row-reverse;
   margin-left : -7vw; /* Image on the right for desktop view */
@@ -934,14 +944,15 @@ body.dark-mode .contact-button{
   color: var(--background-dark);
   padding: 10px 20px;
   font-size: 1rem;
-  text-transform: uppercase;
   font-weight: bold;
-  font-family:  'play-fair';
+  font-family:  'Syne',serif;
   border-radius: 33px;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
   padding : 15px;
   margin-right: auto;
+  text-transform: none;
+
 }
 
 .services-text-button:hover {
@@ -1022,6 +1033,7 @@ body.dark-mode .contact-button{
     border-radius: 25px; /* Make the button look modern */
     margin: 0 auto; /* Center the button */
     width: auto; /* Ensure button doesn't stretch */
+    text-transform: none;
   }
 }
 
@@ -1051,8 +1063,7 @@ body.dark-mode .contact-button{
   color: #000000; /* Light mode heading color */
   margin-bottom: 30px; /* Spacing below the heading */
   font-family: 'Dirtyline36Daysoftype2022'; 
-  
-
+  line-height: 4rem;
 }
 
 /* Dark mode heading */
@@ -1093,7 +1104,7 @@ body.dark-mode .contact-button{
 }
 
 /* Mobile view styles */
-@media (max-width: 576px) {
+@media (max-width: 764px) {
   .testimonial-card {
     flex: 0 0 auto; /* Prevent flex items from shrinking */
     width: 80vw; /* Fixed width for cards */
@@ -1112,6 +1123,7 @@ body.dark-mode .contact-button{
   /* Testimonials wrapper for scrolling */
   .testimonials-heading {
     font-size:3.5rem;
+    line-height: 3rem;
   }
   .testimonial-text{
     font-size: 1rem;
@@ -1269,7 +1281,7 @@ body.dark-mode .contact-button{
   padding: 10px 6px;
   font-size: 14px;
   margin-bottom: 40px;
-  color : var(--background-dark)
+  color : var(--background-dark);
 }
 
 
@@ -1299,22 +1311,7 @@ body.dark-mode .contact-button{
 .dark-mode .message {
   color : var(--background-light);
 }
-/* Button styling */
-.contactSection button {
-  border: 2px solid #000000; /* Gold border for premium feel */
-  background: transparent;
-  color: var(--background-dark);
-  padding: 10px 20px;
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  font-family:  'play-fair';
-  border-radius: 33px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  padding : 15px;
-  margin-right: auto;
-}
+ 
 
 .dark-mode  .contactSection button {
   border: 2px solid #ffffff;
@@ -1345,23 +1342,23 @@ body.dark-mode .contact-button{
   background: none;
   border: none;
   outline: none;
-  border-bottom: 1px solid currentColor;
+  border-bottom: 1px solid #888;
   color: inherit;
   padding: 10px 6px;
   font-size: 14px;
   margin-bottom: 40px;
-  color: var(--background-dark);
+  color: #888;;
   width: 100%;
-  appearance: none; /* Hides default dropdown arrow */
+  appearance: none;  
   cursor: pointer;
 }
 
 /* Dark mode for mobile and service fields */
 .dark-mode .mobile,
 .dark-mode .service {
-  color: var(--background-light);
+  border-bottom: 1px solid #fff;
 }
-
+ 
 /* For mobile responsiveness */
 @media screen and (max-width: 600px) {
   .mobile,
@@ -1369,8 +1366,6 @@ body.dark-mode .contact-button{
     width: 100%;
   }
 }
-
-
 
 /* Toggle button */
 .themeToggle {
@@ -1383,16 +1378,7 @@ body.dark-mode .contact-button{
   text-decoration: underline;
 }
 
-@media screen and (max-width: 600px) {
-  .name,
-  .email {
-    width: 100%;
-    float: none;
-  }
-  .contact-head {
-    font-size: 3.5rem;
-  }
-}
+
 .contact-head {
   font-size: 5rem;
   font-family: 'Dirtyline36Daysoftype2022';
@@ -1402,6 +1388,16 @@ body.dark-mode .contact-button{
   letter-spacing: 0.8;
   font-weight: bold;
   line-height: 0.8;
+}
+@media screen and (max-width: 764px) {
+  .name,
+  .email {
+    width: 100%;
+    float: none;
+  }
+  .contact-head {
+    font-size: 3.5rem;
+  }
 }
 .dark-mode .contact-head {
   color : #ffffff;
@@ -1459,7 +1455,7 @@ body.dark-mode .contact-button{
 }
 
 .social-heading {
-  font-size: 4rem;
+  font-size: 5rem;
   color : #0e0e0e; /* LinkedIn color */
   margin: 0;
   font-family: 'poppins' , serif;
@@ -1482,7 +1478,7 @@ body.dark-mode .contact-button{
   margin: 20px 0;
 }
 /* Mobile view styles */
-@media (max-width: 600px) {
+@media (max-width: 764px) {
   .social-heading {
     font-size: 2rem;
   }
@@ -1582,16 +1578,16 @@ body.dark-mode .contact-button{
   display: grid;
   grid-template-columns: 1fr 1fr; /* Two columns */
   gap: 15px; /* Reduced gap between cards */
-  padding: 40px;
   justify-items: center; /* Centers items horizontally */
   align-items: start; /* Aligns items at the start vertically */
+  margin-top: 10vh;
 }
 
 /* Card styling */
 .stat-card {
   position: relative; /* For absolute positioning of label */
-  width: 35vw;
-  height: 35vh;
+  width: 40vw;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1607,6 +1603,7 @@ body.dark-mode .contact-button{
 .stat-value {
   font-size: 6rem;
   padding-left: 15px;
+  font-family: 'Charrington';
    
 }
 
@@ -1614,15 +1611,16 @@ body.dark-mode .contact-button{
   position: absolute;
   bottom: 10px;
   right: 10px;
-  font-size:2.5rem;
+  font-size:3rem;
   text-align: right;
   font-weight: bolder;
   padding:15px;
-  font-family: 'Syne',serif;
+  font-family: 'Dirtyline36Daysoftype2022',serif;
+  text-transform: lowercase;
 }
 
 /* Responsive adjustments for small screens */
-@media (max-width: 576px) {
+@media (max-width: 764px) {
   .stats-container {
     display: flex;
     flex-wrap: wrap;
@@ -1638,7 +1636,16 @@ body.dark-mode .contact-button{
     font-size: 2rem;
   }
   .stat-label{
-    font-size: 1rem;
+    margin-top: 3vh;
+    margin-left: 3vw;
+    font-size: 2rem;
+  }
+  .stat-card {
+    width: 100%;
+    height: 35vh;
+  }
+  .stat-value{
+    font-size: 3rem;
   }
 }
 
@@ -1654,15 +1661,7 @@ body.dark-mode .contact-button{
   }
 }
 
-@media(max-width:576px) {
-  .stat-value{
-    font-size: 3rem;
-  }
-  .stat-card {
-    width: 100%;
-    height: 25vh;
-  }
-}
+ 
 
 
 
@@ -1755,6 +1754,8 @@ body.dark-mode .contact-button{
   color: var(--background-dark);
   padding: 5vh 10vw;
   margin: 5vh 0;
+  /* Adding box shadow */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Light shadow */
 }
 
 .services-extra-content {
@@ -1763,44 +1764,47 @@ body.dark-mode .contact-button{
 }
 .dark-mode .services-extra-container {
   background-color: var(--background-dark);
-  color:var(--background-light)
+  color: var(--background-light);
+  /* Adding box shadow in dark mode */
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Lighter shadow for dark mode */
 }
+
 .dark-mode .extra-text {
-  color:var(--background-light);
+  color: var(--background-light);
 }
 .dark-mode .extra-text-para {
-  color:var(--background-light);
+  color: var(--background-light);
 }
+
 .extra-heading {
   font-size: 4rem;
   font-family: "Dirtyline36Daysoftype2022", sans-serif;
   margin-bottom: 2vh;
-  width:50%;
+  width: 50%;
 }
- 
+
 .extra-text,
 .extra-text-para {
   font-size: 1.4rem;
   font-family: "Syne", serif;
   text-transform: none;
-  margin-left:auto;
-  width:100%;
+  margin-left: auto;
+  width: 100%;
 }
-.extra-text-para{
-  width:66%;
-  margin-bottom:10px;
+.extra-text-para {
+  width: 66%;
+  margin-bottom: 10px;
   font-weight: bold;
 }
+
 .service-options {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 2rem;
-  width:66%;
-  margin-left:auto;
-  font-family: 'Syne',serif;
-  
-
+  width: 66%;
+  margin-left: auto;
+  font-family: 'Syne', serif;
 }
 
 .service-options-p {
@@ -1810,8 +1814,9 @@ body.dark-mode .contact-button{
   text-transform: none;
 }
 .dark-mode .service-options-p {
-  color:var(--background-light);
+  color: var(--background-light);
 }
+
 /* Responsive Adjustments */
 @media (max-width: 764px) {
   .services-page-heading {
@@ -1827,28 +1832,30 @@ body.dark-mode .contact-button{
     flex-direction: column;
     gap: 1.5rem;
   }
-  .services-extra-content{
+
+  .services-extra-content {
     display: block;
   }
-  .extra-heading{
+
+  .extra-heading {
     font-size: 3.5rem;
   }
-  .extra-text-para{
-    width:100%;
+
+  .extra-text-para {
+    width: 100%;
   }
- 
-   
-  .service-options-p{
-    width:100%;
+
+  .service-options-p {
+    width: 100%;
     text-align: center;
   }
-  
 }
+
 .our-expertise-head{
   font-family: 'Syne',serif;
   text-align: center;
   font-size:6rem;
-  margin-bottom:20vh;
+  margin:20vh 0;
 
 }
 /* Wrapper for the scrolling container */
@@ -2024,6 +2031,10 @@ body.dark-mode .contact-button{
   border: 1px solid #000000;
   border-radius: 8px;
   box-sizing: border-box;
+  margin-bottom:10vh;
+}
+.dark-mode .card {
+  border: 1px solid #ffffff;
 }
 
 @media(max-width:764px){
@@ -2063,6 +2074,7 @@ body.dark-mode .contact-button{
   text-transform: lowercase;
   margin-left: 10vw;
   margin-top: 10vh;
+  line-height: 58pt;
 }
 .dark-mode .time-to-roar-head{
   color:var(--background-light);
@@ -2208,4 +2220,8 @@ body.dark-mode .contact-button{
   text-transform: lowercase;
   font-size: 1.2rem;
   margin-bottom: 15px;
+  text-transform: none;
+}
+.dark-mode .text-content-para {
+  color:var(--background-light);
 }

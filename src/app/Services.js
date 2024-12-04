@@ -87,7 +87,7 @@ const Services = () => {
       </div>
       {/* Heading */}
       <h2 ref={headingRef} className="services-heading">
-        our services
+        our <br/> services
       </h2>
       <p className="our-services-tag">
         Like a constellation, our services align to create a universe of endless
@@ -110,7 +110,9 @@ const Services = () => {
         {
           imgSrc: "./images/socialmedia-management.jpeg",
           title: "marketing & branding",
-          list: ["Video Creation (from Reels to AR/VR videos)", "Content Writing"],
+          list: ["Video Creation (from Reels to AR/VR videos)", "Content Writing","Social Media Management",
+            "Ads Management",
+            "Whatsapp & Email Marketing"],
         },
         
       ].map((service, index) => (
@@ -133,7 +135,7 @@ const Services = () => {
                 <li key={idx}>{item}</li>
               ))}
             </ul>
-            <Link href = '/ServicesPage' ><button className="services-text-button" >More Info</button></Link>
+            <Link href = '/ServicesPage' ><button className="contact-button" >More Info</button></Link>
           </div>
         </div>
       ))}

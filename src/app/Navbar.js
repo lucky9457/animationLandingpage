@@ -81,9 +81,9 @@ export default function Navbar({
             {/* Menu Content */}
             <div className="menu-content">
               <ul className="nav-links">
-                <li >home</li>
-                <li onClick={() => handleScroll("#our-services")}>our services</li>
-              <Link href = "/Trainings" className="navitem"> Trainings & Internships</Link> 
+                <li onClick={() => handleScroll("#home")}><Link href = "/" className="navitem">home </Link></li>
+                <li ><Link href = "/ServicesPage" className="navitem">our services</Link><br/></li> 
+                <li> <Link href = "/Trainings" className="navitem"> Trainings & Internships</Link> </li> 
                 <li onClick={() => handleScroll("#testimonials")}>testimonials</li>
                 <li onClick={() => handleScroll("#contact")}>contact</li>
               </ul>

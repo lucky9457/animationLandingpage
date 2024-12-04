@@ -113,14 +113,14 @@ export default function ServicesPage() {
           Advertisement (Google, Youtube, META Ads) <br />
            Content Writing & Copywriting <br />
            Branding strategy <br />
-
+           Podcasts  <br /> 
 
             </p>
             <p className="service-options-p"> 
             Videos (AR/VR Videos, Reels, Shorts, YT full length videos, Voiceover Narratives)  <br />
             Graphic designs & Mockups  <br /> 
             Product Packaging / Marketing Collateral(s) Design <br />
-            Podcasts  <br /> 
+            
             </p>
           </div>
         </div>

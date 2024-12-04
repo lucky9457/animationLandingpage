@@ -40,7 +40,7 @@ export default function Home() {
           <h1 className="glow-text">Sabeena Digital Media Services</h1>
         </div>
       ) : (
-        <div className={`home ${darkMode ? "dark" : ""}`}>
+        <div className={`home ${darkMode ? "dark" : ""}`} id = "home">
           <Navbar
             darkMode={darkMode}
             toggleDarkMode={toggleDarkMode}
