@@ -30,7 +30,7 @@ export default function Navbar({
       {/* Logo */}
       <div className="left">
         <div className="premium-logo">
-          <span className="logo-main">Sabeena</span>
+          <span className="logo-main">sdms</span>
           <span className="logo-sub">digital media services</span>
         </div>
       </div>

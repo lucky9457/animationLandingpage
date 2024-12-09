@@ -4,10 +4,13 @@ import Services from './Services';
 import Testimonials from './Testimonials';
 import Contact from './Contact'
 import Footer from './Footer'
+import Cursor from './Cursor';
 
-export default function Page() {
+export default function Page({darkMode}) {
     return (
+        
         <div>
+           
                 <Home />
                 <Services />
                 <Testimonials />

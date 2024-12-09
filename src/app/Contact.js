@@ -105,7 +105,6 @@ export default function Contact() {
             className="service"
             value={formData.service}
             onChange={handleChange}
-            type ="dropdown"
           >
             <option value="">Select a Service</option>
             <option value="Digital Solutions & Development">Digital Solutions & Development</option>

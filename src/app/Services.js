@@ -3,8 +3,11 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Stats from "./Stats";
+import Cursor from './Cursor'
 import "../styles/globals.css";
 import Link from 'next/link'
+ 
+ 
 
 const Services = () => {
   const headingRef = useRef(null);
@@ -70,6 +73,7 @@ const Services = () => {
   }, []);
 
   return (
+    
     <section className="services-container" id = "our-services">
       {/* Who We Are Section */}
       <div className="who-are-we" id = "WhoWeAre">
@@ -97,7 +101,7 @@ const Services = () => {
       {/* Service Cards */}
       {[
         {
-          imgSrc: "./images/Digital-Marketing.jpg",
+          imgSrc: "./images/service1.jpeg",
           title: "development",
           list: [
             " Software as a Service (SaaS)",
@@ -108,7 +112,7 @@ const Services = () => {
           ],
         },
         {
-          imgSrc: "./images/socialmedia-management.jpeg",
+          imgSrc: "./images/service2.jpeg",
           title: "marketing & branding",
           list: ["Video Creation (from Reels to AR/VR videos)", "Content Writing","Social Media Management",
             "Ads Management",

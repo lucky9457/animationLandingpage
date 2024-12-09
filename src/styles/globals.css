@@ -658,9 +658,11 @@ a, p {
 
 /* Main Logo Text Styling */
 .logo-main {
-  font-size: 2rem;
-  letter-spacing: 3px;
-  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Syne', serif;
+  font-weight:bolder;
   margin: 0;
   background: linear-gradient(to bottom, black, #2E2E2E); /* Gradient for light mode */
   -webkit-background-clip: text;
@@ -671,9 +673,11 @@ a, p {
 
 /* Dark Mode Specific Styles */
 .dark-mode .logo-main {
-  font-size: 2rem;
-  letter-spacing: 3px;
-  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Syne', serif;
+  font-weight:bolder;
   margin: 0;
   background: linear-gradient(to bottom, #ffcc00, #ffd700); /* Gradient for light mode */
   -webkit-background-clip: text;
@@ -696,6 +700,7 @@ a, p {
   margin-top: -5px;
   animation: fadeInUp 1.5s ease-in-out;
   background-color: #000;
+  display: none;
 }
 
 /* Animations */
@@ -2213,9 +2218,8 @@ body.dark-mode .contact-button{
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding: 20px;
-  width:80vw;
-  margin-left: 10vw;
+  width:90vw;
+  margin-left:7vw;
 }
 
 .sub-container {
@@ -2223,6 +2227,7 @@ body.dark-mode .contact-button{
   flex-direction: column; /* Stack content vertically by default */
   align-items: center;
   gap: 20px;
+  width: 80vw;
 }
 
  
@@ -2283,9 +2288,14 @@ body.dark-mode .contact-button{
   font-family: 'Syne',serif;
   text-transform: lowercase;
   font-size: 1.2rem;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   text-transform: none;
 }
 .dark-mode .text-content-para {
   color:var(--background-light);
 }
+
+
+
+
+ 

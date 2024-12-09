@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "../Navbar";
 import "../../styles/globals.css";
 import { useState, useEffect } from "react";
+import Cursor from "../Cursor";
 
 export default function ServicesPage() {
   const [darkMode, setDarkMode] = useState(false);
@@ -41,7 +42,7 @@ export default function ServicesPage() {
             toggleMenu={toggleMenu}
             menuOpen={menuOpen}
           />
-
+      <Cursor />
       <div className="content-container">
         <h2 className="services-page-heading">our services</h2>
         <div className="services-page-service">

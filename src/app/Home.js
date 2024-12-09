@@ -4,6 +4,7 @@ import { FaRegArrowAltCircleDown } from "react-icons/fa";
 import Head from "next/head";
 import Navbar from "./Navbar";
 import "../styles/globals.css";
+import Cursor from "./Cursor";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -60,7 +61,7 @@ export default function Home() {
             toggleMenu={toggleMenu}
             menuOpen={menuOpen}
           />
-
+        <Cursor darkMode={darkMode}/>
           <main>
             <h2 className="home-heading">
             let's orbit   success <br/>in the  digital universe
