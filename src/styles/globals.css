@@ -2221,6 +2221,11 @@ body.dark-mode .contact-button{
   width:90vw;
   margin-left:7vw;
 }
+@media(max-width:768px){
+  .sub-container{
+  margin-left: 5vw;
+  }
+}
 
 .sub-container {
   display: flex;
@@ -2243,7 +2248,7 @@ body.dark-mode .contact-button{
     flex-direction: row-reverse; /* Reverse row for second sub-container */
   }
 }
-
+ 
 .text-content {
   flex: 1;
   text-align: left;
