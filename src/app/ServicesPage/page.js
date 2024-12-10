@@ -42,7 +42,7 @@ export default function ServicesPage() {
             toggleMenu={toggleMenu}
             menuOpen={menuOpen}
           />
-      <Cursor />
+      <Cursor darkMode={darkMode}/>
       <div className="content-container">
         <h2 className="services-page-heading">our services</h2>
         <div className="services-page-service">

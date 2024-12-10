@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
+import '../styles/globals.css';
 
 export default function Cursor({ darkMode }) {
   const canvasRef = useRef(null);
@@ -84,13 +85,7 @@ export default function Cursor({ darkMode }) {
   return (
     <canvas
       ref={canvasRef}
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        pointerEvents: "none",
-        zIndex: 9999,
-      }}
+      className="cursor-canvas"
     />
   );
 }

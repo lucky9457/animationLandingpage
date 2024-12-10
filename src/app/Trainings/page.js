@@ -23,7 +23,7 @@ const testimonials = [
   },
   {
     name: "Rifkhan",
-    text: "The front-end development training at Sabeena Digital Media Services was absolutely worth every penny. The course gave me the skills to truly excel in front-end development, from mastering core concepts to working with advanced techniques.The practical, hands-on approach and expert guidance made complex topics easy to grasp. I now feel fully equipped to take on real-world projects with confidence. I highly recommend this program to anyone looking to sharpen their front-end development skills!!",
+    text: "The front-end development training at Sabeena Digital Media Services was absolutely worth every penny. The course gave me the skills to truly excel in front-end development, from mastering core concepts to working with advanced techniques. The practical, hands-on approach and expert guidance made complex topics easy to grasp. I now feel fully equipped to take on real-world projects.",
     position: "Full-Stack Training Attendee",
     image: "./images/rifkhan.jpeg"
   },
@@ -85,7 +85,7 @@ export default  function Trainings() {
             toggleMenu={toggleMenu}
             menuOpen={menuOpen}
           />
-        <Cursor />
+        <Cursor darkMode={darkMode}/>
       <div className="content-container">
         <h2 className="services-page-heading">inplant trainings & <br /> internships</h2>
         <div className="services-page-service">

@@ -2233,6 +2233,7 @@ body.dark-mode .contact-button{
   align-items: center;
   gap: 20px;
   width: 80vw;
+  margin-top:10vh;
 }
 
  
@@ -2303,4 +2304,12 @@ body.dark-mode .contact-button{
 
 
 
+.cursor-canvas {
+  position: absolute; /* Stays fixed in the viewport */
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Ensures the canvas does not block user interactions */
+  z-index: 9999; /* Ensures the canvas is above other content */
+}
+ 
  
