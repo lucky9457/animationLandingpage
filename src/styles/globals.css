@@ -2221,11 +2221,7 @@ body.dark-mode .contact-button{
   width:90vw;
   margin-left:7vw;
 }
-@media(max-width:768px){
-  .sub-container{
-  margin-left: 5vw;
-  }
-}
+
 
 .sub-container {
   display: flex;
@@ -2233,10 +2229,14 @@ body.dark-mode .contact-button{
   align-items: center;
   gap: 20px;
   width: 80vw;
-  margin-top:10vh;
+  margin-bottom:10vh;
 }
 
- 
+@media(max-width:768px){
+  .sub-container{
+  margin-left: 5vw;
+  }
+}
 
 /* Large Devices Layout */
 @media (min-width: 768px) {
@@ -2311,5 +2311,10 @@ body.dark-mode .contact-button{
   pointer-events: none; /* Ensures the canvas does not block user interactions */
   z-index: 9999; /* Ensures the canvas is above other content */
 }
- 
+
+ @media(max-width:764px) {
+  .cursor-canvas{
+    position:fixed;
+  }
+ }
  

@@ -10,7 +10,7 @@ export default function Page({darkMode}) {
     return (
         
         <div>
-           
+            <Cursor darkMode={darkMode}/>
                 <Home />
                 <Services />
                 <Testimonials />
