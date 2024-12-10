@@ -34,7 +34,7 @@ const Footer = () => {
   return (
     <footer className="footer-container">
       {/* Animated Footer Heading */}
-      <p ref={headingRef} className="footer-head">
+      <p   className="footer-head">
         connect with us <br /> across the <br /> cosmos
       </p>
 

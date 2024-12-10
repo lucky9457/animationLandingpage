@@ -90,7 +90,7 @@ const Services = () => {
         </p>
       </div>
       {/* Heading */}
-      <h2 ref={headingRef} className="services-heading">
+      <h2   className="services-heading">
         our <br/> services
       </h2>
       <p className="our-services-tag">
@@ -122,7 +122,7 @@ const Services = () => {
       ].map((service, index) => (
         <div
           key={index}
-          ref={(el) => (cardsRef.current[index] = el)}
+       
           className="services-card"
         >
           {/* Image Section */}
