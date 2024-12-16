@@ -2,11 +2,9 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Stats from "./Stats";
-import Cursor from './Cursor'
-import "../styles/globals.css";
-import Link from 'next/link'
- 
+import Stats from "../Stats/Stats";
+import Link from 'next/link';
+import './Services.css';
  
 
 const Services = () => {
@@ -14,63 +12,7 @@ const Services = () => {
   const cardsRef = useRef([]);
   const WhoWeAreRef = useRef([]);
 ;
-  useEffect(() => {
-    // Register ScrollTrigger plugin
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Animate the heading
-    gsap.fromTo(
-      headingRef.current,
-      { x: -100, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1.7,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 80%", // Start when the top of the heading is 80% of the viewport
-          toggleActions: "play reverse play reverse", // Replays the animation on scroll up and down
-        },
-      }
-    );
-    // Animate the heading
-    gsap.fromTo(
-      WhoWeAreRef.current,
-      { x: -100, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1.7,
-        ease: "power3.out",
-        scrollTrigger: {
-          
-          rigger: WhoWeAreRef.current,
-          start: "top 80%", // Start when the top of the heading is 80% of the viewport
-          toggleActions: "play reverse play reverse", // Replays the animation on scroll up and down
-        },
-      }
-    );
-
-    // Animate each card
-    cardsRef.current.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        { y: 50, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%", // Trigger animation when the card enters the viewport
-            toggleActions: "play reverse play reverse", // Replays the animation on scroll up and down
-          },
-        }
-      );
-    });
-  }, []);
+  
 
   return (
     

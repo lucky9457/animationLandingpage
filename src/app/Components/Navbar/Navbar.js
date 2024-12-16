@@ -10,6 +10,7 @@ import {
 } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import './Navbar.css'
 
 export default function Navbar({
   darkMode,

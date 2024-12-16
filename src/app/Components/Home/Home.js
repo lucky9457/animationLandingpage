@@ -2,10 +2,9 @@
 import { useState, useEffect } from "react";
 import { FaRegArrowAltCircleDown } from "react-icons/fa";
 import Head from "next/head";
-import Navbar from "./Navbar";
-import "../styles/globals.css";
-import Cursor from "./Cursor";
-
+import Navbar from "../Navbar/Navbar";
+import Cursor from "../../Cursor";
+import './Home.css'
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);

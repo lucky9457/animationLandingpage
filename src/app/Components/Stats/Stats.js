@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "../styles/globals.css";
+import './Stats.css';
 
 // Animation variants for cards
 const cardVariants = (direction) => {

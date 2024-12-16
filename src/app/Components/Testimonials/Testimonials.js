@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import ScrollingText from './ScrollingText';
-import '../styles/globals.css';
+import ScrollingText from '../ScollingText/ScrollingText';
+import './Testimonials.css';
 
 const testimonials = [
   {
