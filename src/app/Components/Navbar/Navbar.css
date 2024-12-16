@@ -490,7 +490,9 @@
     width:92vw;
     margin-bottom: 5vh;
   }
-  
+  .social-media-icon{
+    color:#000000;
+  }
    .dark-mode .social-media-icon{
     background-color: var(--background-light);
     border-radius: 15px;

@@ -1,7 +1,7 @@
 "use client";
 import Head from "next/head";
 import Navbar from "../Components/Navbar/Navbar";
-import "../../styles/globals.css";
+import "./Trainings.css";
 import React, { useState , useEffect} from 'react';
 import { motion } from 'framer-motion';
 import axios from 'axios';

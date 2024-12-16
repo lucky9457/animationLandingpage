@@ -67,7 +67,7 @@ export default function Navbar({
           >
             <div className="menu-header">
             <div className="premium-logo">
-          <span className="logo-main">Sabeena</span>
+          <span className="logo-main">SDMS</span>
           <span className="logo-sub">digital media services</span>
         </div>
               <button

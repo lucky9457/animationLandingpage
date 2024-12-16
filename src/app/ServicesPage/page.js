@@ -1,7 +1,7 @@
 "use client";
 import Head from "next/head";
 import Navbar from "../Components/Navbar/Navbar";
-import "../../styles/globals.css";
+import "./ServicesPage.css";
 import { useState, useEffect } from "react";
 import Cursor from "../Cursor";
 
