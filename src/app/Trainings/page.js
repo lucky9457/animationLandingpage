@@ -66,7 +66,22 @@ export default  function Trainings() {
     './images/angular.png',
     './images/bootstrap.png',
   ];
-
+   const [dragConstraint, setDragConstraint] = useState(-1500); // Default for desktop
+    
+    useEffect(() => {
+      const handleResize = () => {
+        if (window.innerWidth <= 768) { // Mobile screen width (adjust as needed)
+          setDragConstraint(-1000);
+        } else {
+          setDragConstraint(-1500);
+        }
+      };
+  
+      handleResize(); // Initial check
+      window.addEventListener("resize", handleResize); // Listen to window resize
+  
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
   return (
     <div className="services-page">
@@ -145,7 +160,7 @@ export default  function Trainings() {
          </div>
          <div className="testimonials-container" id = "testimonials">
       <h2 className="testimonials-heading">participant's<br/>testimony</h2>
-      <motion.div className="testimonials-wrapper" drag="x" dragConstraints={{ left: -1500, right: 0 }}>
+      <motion.div className="testimonials-wrapper" drag="x" dragConstraints={{ left: dragConstraint, right: 0 }}>
         {testimonials.map((testimonial, index) => (
           <motion.div
             key={index}

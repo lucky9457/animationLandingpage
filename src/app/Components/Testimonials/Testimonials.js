@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ScrollingText from '../ScollingText/ScrollingText';
 import './Testimonials.css';
@@ -30,15 +30,38 @@ const testimonials = [
     position: "Volunteer, Government School",
     image: "./images/shivaranjani.jpeg"
   },
+  {
+    name: "Chitra Shah",
+    text: "I highly recommend SDMS for their exceptional work on our annual report and brochure. Their professionalism, creativity, and attention to detail transformed complex information into clear, visually engaging content.Rukshana’s collaborative approach, innovative design, and commitment to quality delivered results that exceeded our expectations and effectively highlighted our organization’s vision and achievements.SDMS is an excellent choice for any design or communication project requiring expertise and excellence..",
+    position: "Director, Satya Special School",
+    image: "./images/chitra.jpg"
+  },
 
   // Additional testimonials...
 ];
 
 const Testimonials = () => {
+  const [dragConstraint, setDragConstraint] = useState(-2000); // Default for desktop
+  
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth <= 768) { // Mobile screen width (adjust as needed)
+        setDragConstraint(-1350);
+      } else {
+        setDragConstraint(-2000);
+      }
+    };
+
+    handleResize(); // Initial check
+    window.addEventListener("resize", handleResize); // Listen to window resize
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="testimonials-container" id = "testimonials">
       <h2 className="testimonials-heading">partner's<br/>testimony</h2>
-      <motion.div className="testimonials-wrapper" drag="x" dragConstraints={{ left: -1500, right: 0 }}>
+      <motion.div className="testimonials-wrapper" drag="x" dragConstraints={{ left: dragConstraint, right: 0 }}>
         {testimonials.map((testimonial, index) => (
           <motion.div
             key={index}
