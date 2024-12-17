@@ -46,7 +46,7 @@ const Testimonials = () => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) { // Mobile screen width (adjust as needed)
-        setDragConstraint(-1350);
+        setDragConstraint(-1500);
       } else {
         setDragConstraint(-2000);
       }
