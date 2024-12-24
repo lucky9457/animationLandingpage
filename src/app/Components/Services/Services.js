@@ -1,7 +1,6 @@
 "use client"; // For client-side animations with GSAP
 import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
+import { gsap } from "gsap"
 import Stats from "../Stats/Stats";
 import Link from 'next/link';
 import './Services.css';

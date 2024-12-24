@@ -36,19 +36,44 @@ const testimonials = [
     position: "Director, Satya Special School",
     image: "./images/chitra.jpg"
   },
+  {
+    name: "Ratna Singh",
+    text: "Sabeena Digital Media Services has been a game-changer for Earth Safety Valve, managing all aspects of our organisation with excellence. From organizing an inspiring event with school kids from Nepal to creating stunning graphics, managing our social media, and crafting impactful content for our magazine featured at COP27 in Cairo, their creativity and professionalism have been unmatched. A true partner in driving meaningful impact!",
+    position: "Founder, Earth Safety Valve",
+    image: "./images/ratna.jpeg"
+  },
+  {
+    name: "Dnc Teja",
+    text: "Working with Sabheena Digital Marketing has been an incredible experience. Their personal approach and genuine care made it feel less like a business deal and more like working with a trusted friend.They understood my vision perfectly and brought in creativity and strategy that delivered results beyond expectations. It’s rare to find a team so committed and easy to connect with on a personal level.Thank you, Rukshana, for your unwavering support and for making every step of the journey seamless.",
+    position: "Director, Proven Group of Companies",
+    image: "./images/teja.jpg"
+  },
+  {
+    name: "Mohamed Misfer",
+    text: "Rukshana, thank you very much for your service. I had a positive impact on my business after I made my business's presence online through your website development service, a lot of work's pressure has been reduced as the customers usually call me to ask me their doubts and queries, but now the website has all the necessary details included so I get less calls just for enquiries and more calls that are ready to buy the service. Once again, thank you very much and I look forward to working with you again very soon!",
+    position: "Founder, Misfer Media",
+    image: "./images/misfer.jpeg"
+  },
+  {
+    name: "Nitin JBS",
+    text: "I sincerely appreciate Sabeena Digital Media Services for organizing the Creatathon for a Cause at Thassim Beevi Abdul Kader College For Women. Their professionalism and dedication to empowering young minds were evident throughout.Through meticulous planning and collaboration with Principal Dr. S. Sumaya and the college administration, they created a thriving environment for students to showcase their talents. The team's passion for fostering creativity and collaboration was truly inspiring.Thank you for making a meaningful impact and inspiring the next generation of leaders!",
+    position: "Product Manager @ Way.com | Volunteer",
+    image: "./images/nitin.jpeg"
+  },
+
 
   // Additional testimonials...
 ];
 
 const Testimonials = () => {
-  const [dragConstraint, setDragConstraint] = useState(-2000); // Default for desktop
+  const [dragConstraint, setDragConstraint] = useState(-4500); // Default for desktop
   
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) { // Mobile screen width (adjust as needed)
-        setDragConstraint(-1500);
+        setDragConstraint(-3900);
       } else {
-        setDragConstraint(-2000);
+        setDragConstraint(-4500);
       }
     };
 

@@ -70,7 +70,7 @@
    scroll-behavior: smooth; /* Smooth scrolling */
    padding: 10px 0; /* Padding around the wrapper */
    cursor: grab; /* Indicate draggable area */
-   width:500%;
+   width:900%;
  }
  
  /* Testimonial card styles */
