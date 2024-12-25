@@ -78,7 +78,7 @@ export default function Contact() {
         scrollTrigger: {
           trigger: ".contact-head", // Element to trigger animation
           start: "top 20%", // Trigger when the top of the element reaches 80% from the top of the viewport
-          end: "top 50%",
+          end: "top 20%",
           scrub: true, // Smooth animation when scrolling
         }
       }
