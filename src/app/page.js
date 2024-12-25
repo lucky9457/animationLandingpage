@@ -43,7 +43,7 @@ export default function Page({ darkMode }) {
                 outerScale={5}
                 trailingSpeed={5}
                 clickables={[
-                    'a', 'button', 'input', 'textarea', 'select', 'label',
+                    'a', 'button', 'textarea', 'select', 'label',
                     'h1', 'h2', 'h3', 'h4', 'h5', 'h6',
                     'p', 'img', 'svg', 'span',
                     'li', 'thead', 'tbody', 'tfoot', 'tr', 'td', 'th', 'ul'
