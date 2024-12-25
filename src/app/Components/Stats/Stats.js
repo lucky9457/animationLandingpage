@@ -1,76 +1,82 @@
-import React from "react";
-import { motion } from "framer-motion";
+"use client"; // For client-side animations with GSAP
+import React, { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 import './Stats.css';
 
-// Animation variants for cards
-const cardVariants = (direction) => {
-  const directions = {
-    left: { opacity: 0, x: -100 },
-    top: { opacity: 0, x: 100 },
-    bottom: { opacity: 0, x: -100 },
-    right: { opacity: 0, x: 100 },
-  };
-
-  return {
-    hidden: directions[direction],
-    visible: { opacity: 1, x: 0, y: 0, transition: { duration: 0.8 } },
-  };
-};
-
 export default function StatsComponent() {
+  const statCardsRef = useRef([]);
+
+  useEffect(() => {
+    // GSAP animation logic for each card
+    statCardsRef.current.forEach((card, index) => {
+      const directions = [
+        { direction: "left", x: "-100%", opacity: 0 },
+        { direction: "top", y: "-100%", opacity: 0 },
+        { direction: "bottom", y: "100%", opacity: 0 },
+        { direction: "right", x: "100%", opacity: 0 },
+      ];
+
+      gsap.fromTo(
+        card,
+        directions[index], // Use the corresponding direction
+        {
+          opacity: 1,
+          x: 0,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 200%",
+            end: "bottom top",
+            scrub: true,
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
     <div className="stats-container">
       {/* Card 1 */}
-      <motion.div
+      <div
+        ref={(el) => (statCardsRef.current[0] = el)}
         className="stat-card"
         style={{ backgroundColor: "#4CAF50" }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={cardVariants("left")}
       >
         <div className="stat-value">100+</div>
-        <div className="stat-label">PROJECTS <br/>COMPLETED</div>
-      </motion.div>
+        <div className="stat-label">PROJECTS <br />COMPLETED</div>
+      </div>
 
       {/* Card 2 */}
-      <motion.div
+      <div
+        ref={(el) => (statCardsRef.current[1] = el)}
         className="stat-card"
         style={{ backgroundColor: "#2196F3" }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={cardVariants("top")}
       >
         <div className="stat-value">5+</div>
-        <div className="stat-label">SUCCESSFUL<br/> PARTNERSHIPS</div>
-      </motion.div>
+        <div className="stat-label">SUCCESSFUL<br /> PARTNERSHIPS</div>
+      </div>
 
       {/* Card 3 */}
-      <motion.div
+      <div
+        ref={(el) => (statCardsRef.current[2] = el)}
         className="stat-card"
         style={{ backgroundColor: "#FFC107" }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={cardVariants("bottom")}
       >
         <div className="stat-value">10+</div>
-        <div className="stat-label">CREATIVE <br/>INNOVATORS</div>
-      </motion.div>
+        <div className="stat-label">CREATIVE <br />INNOVATORS</div>
+      </div>
 
       {/* Card 4 */}
-      <motion.div
+      <div
+        ref={(el) => (statCardsRef.current[3] = el)}
         className="stat-card"
         style={{ backgroundColor: "#F44336" }}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.2 }}
-        variants={cardVariants("right")}
       >
         <div className="stat-value">200+</div>
-        <div className="stat-label">HOURS OF <br/> DIGITAL SOLUTIONS</div>
-      </motion.div>
+        <div className="stat-label">HOURS OF <br />DIGITAL SOLUTIONS</div>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import './Contact.css'
+import { useState, useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import './Contact.css';
+
+gsap.registerPlugin(ScrollTrigger); // Register ScrollTrigger
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -63,6 +67,23 @@ export default function Contact() {
       setSuccessMessage("An error occurred. Please try again.");
     }
   };
+
+  useEffect(() => {
+    gsap.fromTo(
+      ".contact-head",
+      { opacity: 0, x: -100 }, // Initial state: hidden and off to the left
+      {
+        opacity: 1,
+        x: 0, // End state: fully visible and at its original position
+        scrollTrigger: {
+          trigger: ".contact-head", // Element to trigger animation
+          start: "top 20%", // Trigger when the top of the element reaches 80% from the top of the viewport
+          end: "top 50%",
+          scrub: true, // Smooth animation when scrolling
+        }
+      }
+    );
+  }, []);
 
   return (
     <div className="contactSection" id="contact">

@@ -1,230 +1,213 @@
 /* Root Color Variables for Light and Dark Mode */
 :root {
+  --background-light: #ffffff;
+  --background-dark: #0a0a0a;
+  --foreground-light: #171717;
+  --foreground-dark: #ffff;
+  --highlight-color: #ffff;
+  /* Golden color */
+}
+
+/* Apply Dark Mode Colors for Dark Mode Preferences */
+@media (prefers-color-scheme: dark) {
+  :root {
     --background-light: #ffffff;
-    --background-dark: #0a0a0a;
-    --foreground-light: #171717;
-    --foreground-dark: #ffff;
-    --highlight-color: #ffff; /* Golden color */
+    --foreground-light: #ededed;
   }
-  
-  /* Apply Dark Mode Colors for Dark Mode Preferences */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --background-light: #ffffff;
-      --foreground-light: #ededed;
-    }
-  }
-  
-  /* Font Import */
-@font-face {
-    font-family: 'Dirtyline36Daysoftype2022';
-    src: url('/fonts/Dirtyline36Daysoftype2022-Reg.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'Syne';
-    src: url('/fonts/Syne.ttf') format('truetype');
-    font-weight: 400; /* Regular */
-    font-style: normal;
-  }
- /* Testimonial Component Styles */
+}
 
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+/* Testimonial Component Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
- /* Testimonials container */
- .testimonials-container {
-   max-width: 1200px; /* Max width for larger screens */
-   margin: 0 auto; /* Center the container */
-   padding: 40px 20px; /* Add padding around the container */
-   background-color: var(--testimonial-container-light); /* Light mode background */
-   border-radius: 15px; /* Rounded corners */
-   box-shadow: 0 4px 20px var(--shadow-light); /* Light mode shadow */
-   transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
- }
-  
- 
- /* Heading styles */
- .testimonials-heading {
-   text-align: left; /* Centered heading */
-   font-size: 5rem; /* Font size for heading */
-   color: #000000; /* Light mode heading color */
-   margin-bottom: 30px; /* Spacing below the heading */
-   font-family: 'Dirtyline36Daysoftype2022'; 
-   line-height: 4rem;
-   font-weight: 100;
- }
- 
- /* Dark mode heading */
- 
- .dark-mode .testimonials-heading{
-     color: var(--highlight-color) /* Dark mode heading color */
-   }
- 
- 
- /* Testimonials wrapper for scrolling */
- .testimonials-wrapper {
-   display: flex; /* Use flexbox for horizontal layout */
-   overflow-x: hidden; /* Enable horizontal scrolling */
-   scroll-behavior: smooth; /* Smooth scrolling */
-   padding: 10px 0; /* Padding around the wrapper */
-   cursor: grab; /* Indicate draggable area */
-   width:900%;
- }
- 
- /* Testimonial card styles */
- .testimonial-card {
-   flex: 0 0 auto; /* Prevent flex items from shrinking */
-   width: 45vw; /* Fixed width for cards */
-   margin-right: 20px; /* Spacing between cards */
-   padding: 20px; /* Padding inside each card */
-   background-color: #ffffff; /* Light mode card */
-   border-radius: 10px; /* Rounded corners for cards */
-   box-shadow: 0 2px 10px var(--shadow-light); /* Light mode shadow */
-   transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, filter 0.3s; /* Smooth transition */
-   position: relative; /* Position for glowing effect */
-   border: 2px solid #000000;
-   cursor: grab; /* Indicate draggable content */
-   user-select: none; /* Prevent text selection while dragging */
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   justify-content: flex-end;
- }
- 
- /* Mobile view styles */
- @media (max-width: 764px) {
-   .testimonial-card {
-     flex: 0 0 auto; /* Prevent flex items from shrinking */
-     width: 80vw; /* Fixed width for cards */
-     margin-right: 20px; /* Spacing between cards */
-     padding: 20px; /* Padding inside each card */
-     background-color: #ffffff; /* Light mode card */
-     border-radius: 10px; /* Rounded corners for cards */
-     box-shadow: 0 2px 10px var(--shadow-light); /* Light mode shadow */
-     transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, filter 0.3s; /* Smooth transition */
-     position: relative; /* Position for glowing effect */
-     border: 2px solid #000000;
-     cursor: grab; /* Indicate draggable content */
-     user-select: none; /* Prevent text selection while dragging */
-    
-   }
-   /* Testimonials wrapper for scrolling */
-   .testimonials-heading {
-     font-size:3.5rem;
-     line-height: 3rem;
-   }
-   .testimonial-text{
-     font-size: 1rem;
-   }
-   
- }
- 
- 
- 
- .dark-mode  .testimonial-card {
-     background-color: var(--testimonial-card-dark); /* Dark mode card */
-     box-shadow: 0 2px 10px var(--shadow-dark); /* Dark mode shadow */
-     border: 2px solid #ffffff;
-   }
- 
- 
- /* Testimonial card glow effect */
- .testimonial-card:hover {
-   transform: translateY(-5px); /* Slight lift on hover */
-   filter: drop-shadow(0 0 15px var(--glow-light)); /* Light mode glow */
-   border: 2px solid #ffffff;
-   background-color: #f0f0f0;
-   
- }
- 
- .dark-mode .testimonial-card:hover {
-   background-color: #000000;
- }
-  
- 
- 
- /* Image styles */
- .testimonial-image {
-   width: 100px;
-   height:100px; /* Full width of the card */
-   height: auto; /* Auto height to maintain aspect ratio */
-   border-radius: 50%; /* Circular images */
-   margin-bottom: 15px; /* Spacing below image */
- }
- 
- /* Name styles */
- .testimonial-name {
-   font-size: 1.5rem; /* Font size for name */
-   font-weight: bold; /* Bold font */
-   color: var(--background-dark); /* Light mode name color */
-   margin-bottom: 10px; /* Spacing below name */
-   text-align: center;
-   font-family: 'Syne', serif;
-   
- }
- 
- 
- .dark-mode .testimonial-name {
-     color: var(--background-light); /* Dark mode name color */
-   }
- 
- /* Text styles */
- .testimonial-text {
-   font-size: 1.5rem; /* Font size for text */
-   color: #555; /* Grey color for text */
-   margin-bottom: 10px; /* Spacing below text */
-   line-height: 1.5; /* Line height for readability */
-   font-family: 'Syne',serif;
-   text-transform: none;
-   text-align: center;
-   margin-top:7vh;
-   margin-bottom:auto;
- }
- 
- .dark-mode .testimonial-text {
-   color : #FFFFF7;
- }
- /* Position styles */
- .testimonial-position {
-   font-size: 0.9rem; /* Smaller font size for position */
-   color: #777; /* Lighter grey for position text */ /* Italic style for emphasis */
-   text-align: center;
-   font-family: 'Syne',serif;
- 
- }
- 
- /* Dark mode position */
- @media (prefers-color-scheme: dark) {
-   .testimonial-position {
-     color: #aaa; /* Light grey for position in dark mode */
-   }
- }
- /* Mobile view styles */
- @media (max-width: 764px) {
-   .testimonial-card {
-     flex: 0 0 auto; /* Prevent flex items from shrinking */
-     width: 80vw; /* Fixed width for cards */
-     margin-right: 20px; /* Spacing between cards */
-     padding: 20px; /* Padding inside each card */
-     background-color: #ffffff; /* Light mode card */
-     border-radius: 10px; /* Rounded corners for cards */
-     box-shadow: 0 2px 10px var(--shadow-light); /* Light mode shadow */
-     transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s, filter 0.3s; /* Smooth transition */
-     position: relative; /* Position for glowing effect */
-     border: 2px solid #000000;
-     cursor: grab; /* Indicate draggable content */
-     user-select: none; /* Prevent text selection while dragging */
-    
-   }
-   /* Testimonials wrapper for scrolling */
-   .testimonials-heading {
-     font-size:3.5rem;
-   }
-   .testimonial-text{
-     font-size: 1rem;
-   }
-   
- }
- 
+/* Testimonials container */
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: var(--testimonial-container-light);
+  border-radius: 15px;
+  box-shadow: 0 4px 20px var(--shadow-light);
+  transition: background-color 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Heading styles */
+.testimonials-heading {
+  text-align: left;
+  font-size: 5rem;
+  color: #000000;
+  margin-bottom: 30px;
+  font-family: 'Dirtyline36Daysoftype2022';
+  line-height: 4rem;
+  font-weight: 100;
+}
+
+/* Testimonials wrapper for scrolling */
+.testimonials-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  animation: scrollTestimonials 30s linear infinite;
+  /* Infinite scroll animation */
+  width: 100%;
+  padding: 10px 0;
+  cursor: grab;
+
+
+}
+
+.testimonials-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  animation: scrollTestimonials 30s linear infinite;
+  /* Infinite scroll animation */
+  width: 110vw;
+  padding: 10px 0;
+  cursor: grab;
+  position: relative;
+
+  /* Gradient effect for left and right inner shadows in light mode */
+  background: linear-gradient(to left, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0)),
+    linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  background-repeat: no-repeat;
+  background-size: 10px 100%, 10px 100%;
+  transition: background 0.3s ease;
+  /* Smooth transition for gradient change */
+}
+
+.testimonials-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, rgb(0, 0, 0), rgba(240, 240, 240, 0));
+}
+
+.testimonials-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, rgb(0, 0, 0), rgba(240, 240, 240, 0));
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  .testimonials-wrapper {
+    /* Gradient effect for left and right inner shadows in dark mode */
+    background: linear-gradient(to left, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)),
+      linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+    background-repeat: no-repeat;
+    background-size: 10px 100%, 10px 100%;
+  }
+}
+
+/* Keyframes for continuous scrolling */
+@keyframes scrollTestimonials {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Testimonial card styles */
+.testimonial-card {
+  flex: 0 0 auto;
+  width: 35vw;
+  /* Fixed width for cards */
+  margin-right: 20px;
+  /* Spacing between cards */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px var(--shadow-light);
+  position: relative;
+  border: 2px solid #000000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  user-select: none;
+  cursor: grab;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Hover effect for testimonial card */
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  filter: drop-shadow(0 0 15px var(--glow-light));
+  border: 2px solid #ffffff;
+  background-color: #f0f0f0;
+}
+
+/* Image styles */
+.testimonial-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+/* Name styles */
+.testimonial-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--background-dark);
+  margin-bottom: 10px;
+  text-align: center;
+  font-family: 'Syne', serif;
+}
+
+/* Text styles */
+.testimonial-text {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.5;
+  font-family: 'Syne', serif;
+  text-transform: none;
+  text-align: center;
+
+}
+
+/* Position styles */
+.testimonial-position {
+  font-size: 0.9rem;
+  color: #777;
+  text-align: center;
+  font-family: 'Syne', serif;
+}
+
+/* Mobile view styles */
+@media (max-width: 764px) {
+  .testimonial-card {
+    width: 80vw;
+  }
+
+  .testimonials-heading {
+    font-size: 3.5rem;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+}
+
+/* Dark mode styles */
+.dark-mode .testimonial-card {
+  background-color: var(--testimonial-card-dark);
+  box-shadow: 0 2px 10px var(--shadow-dark);
+  border: 2px solid #ffffff;
+}
+
+.dark-mode .testimonial-name {
+  color: var(--background-light);
+}
+
+.dark-mode .testimonial-text {
+  color: #FFFFF7;
+}
+
+.dark-mode .testimonial-position {
+  color: #aaa;
+}

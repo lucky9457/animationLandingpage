@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import ScrollingText from '../ScollingText/ScrollingText';
 import './Testimonials.css';
@@ -67,7 +67,7 @@ const testimonials = [
 
 const Testimonials = () => {
   const [dragConstraint, setDragConstraint] = useState(-4500); // Default for desktop
-  
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth <= 768) { // Mobile screen width (adjust as needed)
@@ -84,8 +84,8 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="testimonials-container" id = "testimonials">
-      <h2 className="testimonials-heading">partner's<br/>testimony</h2>
+    <div className="testimonials-container" id="testimonials">
+      <h2 className="testimonials-heading">partner's<br />testimony</h2>
       <motion.div className="testimonials-wrapper" drag="x" dragConstraints={{ left: dragConstraint, right: 0 }}>
         {testimonials.map((testimonial, index) => (
           <motion.div
@@ -95,8 +95,8 @@ const Testimonials = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
           >
-            
-            
+
+
             <p className="testimonial-text">"{testimonial.text}"</p>
             <img src={testimonial.image} alt={testimonial.name} className="testimonial-image" />
             <h3 className="testimonial-name">{testimonial.name}</h3>
@@ -104,7 +104,7 @@ const Testimonials = () => {
           </motion.div>
         ))}
       </motion.div>
-        <ScrollingText/>
+      <ScrollingText />
     </div>
   );
 };

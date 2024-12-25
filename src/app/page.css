@@ -1,0 +1,41 @@
+/* Default hidden state for sections */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Animation when the section is in view */
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#testimonials {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+#testimonials {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* For Internet Explorer, Edge */
+body {
+    -ms-overflow-style: none;
+    /* Hide scroll bar */
+}
+
+/* For Firefox */
+html {
+    scrollbar-width: none;
+    /* Hide scroll bar */
+}
+
+/* For Chrome, Safari, and Opera */
+body::-webkit-scrollbar {
+    display: none;
+    /* Hide scroll bar */
+}

@@ -18,7 +18,7 @@ export default function Navbar({
   toggleMenu,
   menuOpen,
 }) {
-  
+
   const handleScroll = (id) => {
     const section = document.querySelector(id);
     if (section) {
@@ -66,10 +66,10 @@ export default function Navbar({
             transition={{ duration: 0.75, ease: "easeInOut" }}
           >
             <div className="menu-header">
-            <div className="premium-logo">
-          <span className="logo-main">SDMS</span>
-          <span className="logo-sub">digital media services</span>
-        </div>
+              <div className="premium-logo">
+                <span className="logo-main">SDMS</span>
+                <span className="logo-sub">digital media services</span>
+              </div>
               <button
                 className="toggle-button overlay-toggle"
                 onClick={toggleDarkMode}
@@ -82,32 +82,32 @@ export default function Navbar({
             {/* Menu Content */}
             <div className="menu-content">
               <ul className="nav-links">
-                <li onClick={() => handleScroll("#home")}><Link href = "/" className="navitem">home </Link></li>
-                <li ><Link href = "/ServicesPage" className="navitem">our services</Link><br/></li> 
-                <li> <Link href = "/Trainings" className="navitem"> Trainings & Internships</Link> </li> 
-                <li onClick={() => handleScroll("#testimonials")}>testimonials</li>
-                <li onClick={() => handleScroll("#contact")}>contact</li>
+                <li onClick={() => handleScroll("#home")}><Link href="/" className="navitem">home </Link></li>
+                <li ><Link href="/ServicesPage" className="navitem">our services</Link><br /></li>
+                <li> <Link href="/Trainings" className="navitem"> Trainings & Internships</Link> </li>
+                <li className="navitem" onClick={() => handleScroll("#testimonials")}>testimonials</li>
+                <li className="navitem" onClick={() => handleScroll("#contact")}>contact</li>
               </ul>
-              </div>
-              <div className="contact-info">
-                <p className="website-url">sabeenadigitalmediaservices.com</p>
-                <p className="phone-number">123-456-7866-5564</p>
-              </div>
-              <div className="social-links">
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-media-icon">
-                  <FaFacebook size={50}/>
-                </a>
-                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-media-icon">
-                  <FaTwitter size={50}/>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-media-icon">
-                  <FaInstagram size={50}/>
-                </a>
-                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-media-icon">
-                  <FaLinkedin size={50}/>
-                </a>
-              </div>
-            
+            </div>
+            <div className="contact-info">
+              <p className="website-url">sabeenadigitalmediaservices.com</p>
+              <p className="phone-number">123-456-7866-5564</p>
+            </div>
+            <div className="social-links">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="social-media-icon">
+                <FaFacebook size={50} />
+              </a>
+              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="social-media-icon">
+                <FaTwitter size={50} />
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="social-media-icon">
+                <FaInstagram size={50} />
+              </a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="social-media-icon">
+                <FaLinkedin size={50} />
+              </a>
+            </div>
+
           </motion.div>
         )}
       </AnimatePresence>
