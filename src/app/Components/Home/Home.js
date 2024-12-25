@@ -1,11 +1,15 @@
 "use client";
 import { useState, useEffect } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { FaRegArrowAltCircleDown } from "react-icons/fa";
 import Head from "next/head";
 import Navbar from "../Navbar/Navbar";
-import Cursor from "../../Cursor";
-import "../../../styles/globals.css"
-import './Home.css'
+import "../../../styles/globals.css";
+import "./Home.css";
+
+gsap.registerPlugin(ScrollTrigger); // Register GSAP ScrollTrigger
+
 export default function Home() {
   const [loading, setLoading] = useState(true);
   const [darkMode, setDarkMode] = useState(false);
@@ -14,8 +18,35 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000); // Show the loading screen for 5 seconds (video duration)
+    }, 5000); // Show loading screen for 5 seconds
     return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const videoElement = document.querySelector(".myvid");
+      const triggerElement = document.querySelector(".vidcno");
+
+      if (videoElement && triggerElement) {
+        gsap.fromTo(
+          videoElement,
+          { scale: 0.1 }, // Initial scale
+          {
+            scale: 1.6, // Final scale
+            scrollTrigger: {
+              trigger: triggerElement,
+              start: "top 80%", // Start animation when .vidcno is 80% in viewport
+              end: "top 5%", // End when .vidcno reaches 10% in viewport
+              scrub: 1, // Smooth animation based on scroll
+              markers: true, // Debug markers
+              reverse: true, // Reverse animation when scrolling upwards
+            },
+          }
+        );
+      }
+    });
+
+    return () => ctx.revert();
   }, []);
 
   const toggleDarkMode = () => {
@@ -49,7 +80,6 @@ export default function Home() {
             Your browser does not support the video tag.
           </video>
           <div id="logo-and-title" className="fade-in">
-            {/*  <img src="./images/logo.jpeg" alt="Logo" className="logo zoom-in" /> */}
             <h1 className="glow-text zoom-in">Sabeena Digital Media Services</h1>
           </div>
         </div>
@@ -64,7 +94,7 @@ export default function Home() {
 
           <main className="mainn">
             <h2 className="home-heading">
-              let's orbit   success <br />in the  digital universe
+              let's orbit success <br />in the digital universe
             </h2>
             <p className="home-desc">
               Launch your brand into the digital cosmos with powerful software, dynamic video creations <br /> and stellar web and app solutions. We guide your business to new galaxies of growth and success.
@@ -75,6 +105,13 @@ export default function Home() {
             <div className="button-row">
               <button className="explore-button">Explore work</button>
               <button className="contact-button">Get in Touch</button>
+            </div>
+
+            <div className="vidcno">
+              <video className="myvid" loop autoPlay muted>
+                <source src="./images/videoplayback.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </main>
         </div>
